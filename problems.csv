@@ -1,0 +1,154 @@
+contest,problem_name,problem_statement,problem_tags,problem_id
+4,A,"One hot summer day Pete and his friend Billy decided to buy a watermelon. They chose the biggest and the ripest one, in their opinion. After that the watermelon was weighed, and the scales showed w kilos. They rushed home, dying of thirst, and decided to divide the berry, however they faced a hard problem.
+
+Pete and Billy are great fans of even numbers, that's why they want to divide the watermelon in such a way that each of the two parts weighs even number of kilos, at the same time it is not obligatory that the parts are equal. The boys are extremely tired and want to start their meal as soon as possible, that's why you should help them and find out, if they can divide the watermelon in the way they want. For sure, each of them should get a part of positive weight.
+
+The first (and the only) input line contains integer number w (1 ≤ w ≤ 100) — the weight of the watermelon bought by the boys.
+
+Print YES, if the boys can divide the watermelon into two parts, each of them weighing even number of kilos; and NO in the opposite case.
+
+For example, the boys can divide the watermelon into two parts of 2 and 6 kilos respectively (another variant — two parts of 4 and 4 kilos).","bruteforce,math,*800",4A
+32,A,"According to the regulations of Berland's army, a reconnaissance unit should consist of exactly two soldiers. Since these two soldiers shouldn't differ much, their heights can differ by at most d centimeters. Captain Bob has n soldiers in his detachment. Their heights are a1, a2, ..., an centimeters. Some soldiers are of the same height. Bob wants to know, how many ways exist to form a reconnaissance unit of two soldiers from his detachment.
+
+Ways (1, 2) and (2, 1) should be regarded as different.
+
+The first line contains two integers n and d (1 ≤ n ≤ 1000, 1 ≤ d ≤ 109) — amount of soldiers in Bob's detachment and the maximum allowed height difference respectively. The second line contains n space-separated integers — heights of all the soldiers in Bob's detachment. These numbers don't exceed 109.
+
+Output one number — amount of ways to form a reconnaissance unit of two soldiers, whose height difference doesn't exceed d.","bruteforce,*800",32A
+59,A,"Vasya is very upset that many people on the Net mix uppercase and lowercase letters in one word. That's why he decided to invent an extension for his favorite browser that would change the letters' register in every word so that it either only consisted of lowercase letters or, vice versa, only of uppercase ones. At that as little as possible letters should be changed in the word. For example, the word HoUse must be replaced with house, and the word ViP — with VIP. If a word contains an equal number of uppercase and lowercase letters, you should replace all the letters with lowercase ones. For example, maTRIx should be replaced by matrix. Your task is to use the given method on one given word.
+
+The first line contains a word s — it consists of uppercase and lowercase Latin letters and possesses the length from 1 to 100.
+
+Print the corrected word s. If the given word s has strictly more uppercase letters, make the word written in the uppercase register, otherwise - in the lowercase one.","implementation,strings,*800",59A
+104,A,"One rainy gloomy evening when all modules hid in the nearby cafes to drink hot energetic cocktails, the Hexadecimal virus decided to fly over the Mainframe to look for a Great Idea. And she has found one!
+
+Why not make her own Codeforces, with blackjack and other really cool stuff? Many people will surely be willing to visit this splendid shrine of high culture.
+
+In Mainframe a standard pack of 52 cards is used to play blackjack. The pack contains cards of 13 values: 2, 3, 4, 5, 6, 7, 8, 9, 10, jacks, queens, kings and aces. Each value also exists in one of four suits: hearts, diamonds, clubs and spades. Also, each card earns some value in points assigned to it: cards with value from two to ten earn from 2 to 10 points, correspondingly. An ace can either earn 1 or 11, whatever the player wishes. The picture cards (king, queen and jack) earn 10 points. The number of points a card earns does not depend on the suit. The rules of the game are very simple. The player gets two cards, if the sum of points of those cards equals n, then the player wins, otherwise the player loses.
+
+The player has already got the first card, it's the queen of spades. To evaluate chances for victory, you should determine how many ways there are to get the second card so that the sum of points exactly equals n.
+
+The only line contains n (1 ≤ n ≤ 25) — the required sum of points.
+
+Print the numbers of ways to get the second card in the required way if the first card is the queen of spades.
+
+In the first sample only four two's of different suits can earn the required sum of points.
+
+In the second sample we can use all tens, jacks, queens and kings; overall it's 15 cards, as the queen of spades (as any other card) is only present once in the pack of cards and it's already in use.
+
+In the third sample there is no card, that would add a zero to the current ten points.","implementation,*800",104A
+146,A,"Petya loves lucky numbers very much. Everybody knows that lucky numbers are positive integers whose decimal record contains only the lucky digits 4 and 7. For example, numbers 47, 744, 4 are lucky and 5, 17, 467 are not.
+
+Petya loves tickets very much. As we know, each ticket has a number that is a positive integer. Its length equals n (n is always even). Petya calls a ticket lucky if the ticket's number is a lucky number and the sum of digits in the first half (the sum of the first n / 2 digits) equals the sum of digits in the second half (the sum of the last n / 2 digits). Check if the given ticket is lucky.
+
+The first line contains an even integer n (2 ≤ n ≤ 50) — the length of the ticket number that needs to be checked. The second line contains an integer whose length equals exactly n — the ticket number. The number may contain leading zeros.
+
+On the first line print ""YES"" if the given ticket number is lucky. Otherwise, print ""NO"" (without the quotes).
+
+In the first sample the sum of digits in the first half does not equal the sum of digits in the second half (4 ≠ 7).
+
+In the second sample the ticket number is not the lucky number.","implementation,*800",146A
+233,A,"A permutation is a sequence of integers p1, p2, ..., pn, consisting of n distinct positive integers, each of them doesn't exceed n. Let's denote the i-th element of permutation p as pi. We'll call number n the size of permutation p1, p2, ..., pn.
+
+Nickolas adores permutations. He likes some permutations more than the others. He calls such permutations perfect. A perfect permutation is such permutation p that for any i (1 ≤ i ≤ n) (n is the permutation size) the following equations hold ppi = i and pi ≠ i. Nickolas asks you to print any perfect permutation of size n for the given n.
+
+A single line contains a single integer n (1 ≤ n ≤ 100) — the permutation size.
+
+If a perfect permutation of size n doesn't exist, print a single integer -1. Otherwise print n distinct integers from 1 to n, p1, p2, ..., pn — permutation p, that is perfect. Separate printed numbers by whitespaces.","implementation,math,*800",233A
+268,A,"Manao works on a sports TV. He's spent much time watching the football games of some country. After a while he began to notice different patterns. For example, each team has two sets of uniforms: home uniform and guest uniform. When a team plays a game at home, the players put on the home uniform. When a team plays as a guest on somebody else's stadium, the players put on the guest uniform. The only exception to that rule is: when the home uniform color of the host team matches the guests' uniform, the host team puts on its guest uniform as well. For each team the color of the home and guest uniform is different.
+
+There are n teams taking part in the national championship. The championship consists of n·(n - 1) games: each team invites each other team to its stadium. At this point Manao wondered: how many times during the championship is a host team going to put on the guest uniform? Note that the order of the games does not affect this number.
+
+You know the colors of the home and guest uniform for each team. For simplicity, the colors are numbered by integers in such a way that no two distinct colors have the same number. Help Manao find the answer to his question.
+
+The first line contains an integer n (2 ≤ n ≤ 30). Each of the following n lines contains a pair of distinct space-separated integers hi, ai (1 ≤ hi, ai ≤ 100) — the colors of the i-th team's home and guest uniforms, respectively.
+
+In a single line print the number of games where the host team is going to play in the guest uniform.
+
+In the first test case the championship consists of 6 games. The only game with the event in question is the game between teams 2 and 1 on the stadium of team 2.
+
+In the second test sample the host team will have to wear guest uniform in the games between teams: 1 and 2, 2 and 1, 2 and 3, 3 and 4, 4 and 2 (the host team is written first).","bruteforce,*800",268A
+386,A,"In this problem we consider a special type of an auction, which is called the second-price auction. As in regular auction n bidders place a bid which is price a bidder ready to pay. The auction is closed, that is, each bidder secretly informs the organizer of the auction price he is willing to pay. After that, the auction winner is the participant who offered the highest price. However, he pay not the price he offers, but the highest price among the offers of other participants (hence the name: the second-price auction).
+
+Write a program that reads prices offered by bidders and finds the winner and the price he will pay. Consider that all of the offered prices are different.
+
+The first line of the input contains n (2 ≤ n ≤ 1000) — number of bidders. The second line contains n distinct integer numbers p1, p2, ... pn, separated by single spaces (1 ≤ pi ≤ 10000), where pi stands for the price offered by the i-th bidder.
+
+The single output line should contain two integers: index of the winner and the price he will pay. Indices are 1-based.","implementation,*800",386A
+401,A,"Vanya loves playing. He even has a special set of cards to play with. Each card has a single integer. The number on the card can be positive, negative and can even be equal to zero. The only limit is, the number on each card doesn't exceed x in the absolute value.
+
+Natasha doesn't like when Vanya spends a long time playing, so she hid all of his cards. Vanya became sad and started looking for the cards but he only found n of them. Vanya loves the balance, so he wants the sum of all numbers on found cards equal to zero. On the other hand, he got very tired of looking for cards. Help the boy and say what is the minimum number of cards does he need to find to make the sum equal to zero?
+
+You can assume that initially Vanya had infinitely many cards with each integer number from  - x to x.
+
+ 
+
+The first line contains two integers: n (1 ≤ n ≤ 1000) — the number of found cards and x (1 ≤ x ≤ 1000) — the maximum absolute value of the number on a card. The second line contains n space-separated integers — the numbers on found cards. It is guaranteed that the numbers do not exceed x in their absolute value.
+
+Print a single number — the answer to the problem.
+
+In the first sample, Vanya needs to find a single card with number -2.
+
+In the second sample, Vanya needs to find two cards with number 2. He can't find a single card with the required number as the numbers on the lost cards do not exceed 3 in their absolute value.","implementation,math,*800",401A
+448,A,"Bizon the Champion is called the Champion for a reason. 
+
+Bizon the Champion has recently got a present — a new glass cupboard with n shelves and he decided to put all his presents there. All the presents can be divided into two types: medals and cups. Bizon the Champion has a1 first prize cups, a2 second prize cups and a3 third prize cups. Besides, he has b1 first prize medals, b2 second prize medals and b3 third prize medals. 
+
+Naturally, the rewards in the cupboard must look good, that's why Bizon the Champion decided to follow the rules:
+
+Help Bizon the Champion find out if we can put all the rewards so that all the conditions are fulfilled.
+
+The first line contains integers a1, a2 and a3 (0 ≤ a1, a2, a3 ≤ 100). The second line contains integers b1, b2 and b3 (0 ≤ b1, b2, b3 ≤ 100). The third line contains integer n (1 ≤ n ≤ 100).
+
+The numbers in the lines are separated by single spaces.
+
+Print ""YES"" (without the quotes) if all the rewards can be put on the shelves in the described manner. Otherwise, print ""NO"" (without the quotes).","implementation,*800",448A
+467,A,"George has recently entered the BSUCP (Berland State University for Cool Programmers). George has a friend Alex who has also entered the university. Now they are moving into a dormitory. 
+
+George and Alex want to live in the same room. The dormitory has n rooms in total. At the moment the i-th room has pi people living in it and the room can accommodate qi people in total (pi ≤ qi). Your task is to count how many rooms has free place for both George and Alex.
+
+The first line contains a single integer n (1 ≤ n ≤ 100) — the number of rooms.
+
+The i-th of the next n lines contains two integers pi and qi (0 ≤ pi ≤ qi ≤ 100) — the number of people who already live in the i-th room and the room's capacity.
+
+Print a single integer — the number of rooms where George and Alex can move in.","implementation,*800",467A
+492,A,"Vanya got n cubes. He decided to build a pyramid from them. Vanya wants to build the pyramid as follows: the top level of the pyramid must consist of 1 cube, the second level must consist of 1 + 2 = 3 cubes, the third level must have 1 + 2 + 3 = 6 cubes, and so on. Thus, the i-th level of the pyramid must have 1 + 2 + ... + (i - 1) + i cubes.
+
+Vanya wants to know what is the maximum height of the pyramid that he can make using the given cubes.
+
+The first line contains integer n (1 ≤ n ≤ 104) — the number of cubes given to Vanya.
+
+Print the maximum possible height of the pyramid in the single line.
+
+Illustration to the second sample: ","implementation,*800",492A
+520,A,"A word or a sentence in some language is called a pangram if all the characters of the alphabet of this language appear in it at least once. Pangrams are often used to demonstrate fonts in printing or test the output devices.
+
+You are given a string consisting of lowercase and uppercase Latin letters. Check whether this string is a pangram. We say that the string contains a letter of the Latin alphabet if this letter occurs in the string in uppercase or lowercase.
+
+The first line contains a single integer n (1 ≤ n ≤ 100) — the number of characters in the string.
+
+The second line contains the string. The string consists only of uppercase and lowercase Latin letters.
+
+Output ""YES"", if the string is a pangram and ""NO"" otherwise.","implementation,strings,*800",520A
+599,A,"Today Patrick waits for a visit from his friend Spongebob. To prepare for the visit, Patrick needs to buy some goodies in two stores located near his house. There is a d1 meter long road between his house and the first shop and a d2 meter long road between his house and the second shop. Also, there is a road of length d3 directly connecting these two shops to each other. Help Patrick calculate the minimum distance that he needs to walk in order to go to both shops and return to his house.
+
+Patrick always starts at his house. He should visit both shops moving only along the three existing roads and return back to his house. He doesn't mind visiting the same shop or passing the same road multiple times. The only goal is to minimize the total distance traveled.
+
+The first line of the input contains three integers d1, d2, d3 (1 ≤ d1, d2, d3 ≤ 108) — the lengths of the paths. 
+
+Print the minimum distance that Patrick will have to walk in order to visit both shops and return to his house.
+
+The first sample is shown on the picture in the problem statement. One of the optimal routes is: house  first shop  second shop  house.
+
+In the second sample one of the optimal routes is: house  first shop  house  second shop  house.","implementation,*800",599A
+624,A,"Luke Skywalker got locked up in a rubbish shredder between two presses. R2D2 is already working on his rescue, but Luke needs to stay alive as long as possible. For simplicity we will assume that everything happens on a straight line, the presses are initially at coordinates 0 and L, and they move towards each other with speed v1 and v2, respectively. Luke has width d and is able to choose any position between the presses. Luke dies as soon as the distance between the presses is less than his width. Your task is to determine for how long Luke can stay alive.
+
+The first line of the input contains four integers d, L, v1, v2 (1 ≤ d, L, v1, v2 ≤ 10 000, d < L) — Luke's width, the initial position of the second press and the speed of the first and second presses, respectively.
+
+Print a single real value — the maximum period of time Luke can stay alive for. Your answer will be considered correct if its absolute or relative error does not exceed 10 - 6. 
+
+Namely: let's assume that your answer is a, and the answer of the jury is b. The checker program will consider your answer correct, if .
+
+In the first sample Luke should stay exactly in the middle of the segment, that is at coordinates [2;4], as the presses move with the same speed.
+
+In the second sample he needs to occupy the position . In this case both presses move to his edges at the same time.","math,*800",624A

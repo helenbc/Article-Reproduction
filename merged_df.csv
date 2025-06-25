@@ -1,0 +1,1550 @@
+problem_id,submission_id,code,halstead_effort,modularity_score,quality_score,functionality_score,verdict
+4A,269308927,"w = int(input())
+if w%2 == 0 and w != 2:
+    print(""YES"")
+else:
+    print(""NO"")",106.3016990363956,73.14196218558828,3,1,1
+4A,268967990,"def main():
+    watermelon = int(input())
+    if watermelon % 2 == 0 and watermelon > 2:
+        print(""YES"")
+    else:
+        print(""NO"")
+
+if __name__ == ""__main__"":
+    main()",134.43609377704337,67.64450076405312,3,1,1
+4A,4278977,"n = int(input())
+answer = 'YES' if n > 2 and (n-2)%2 == 0 else 'NO'
+print(answer)",192.0515625386334,77.07107029550923,3,1,1
+4A,204115614,print('YNEOS'[5%~int(input())%2::2]),22.458839376460833,83.83640786910061,2,1,1
+4A,269005075,"w = int(input())
+if w % 2 == 0:
+    print(""YES"")
+else:
+    print(""NO"")",15.509775004326936,76.14705226402761,3,1,1
+4A,269170574,"def main():
+    n=int(input())
+    if n%2==0:
+        return 'YES'
+    return 'NO'",15.509775004326936,76.14705226402761,3,1,0
+4A,269308016,"w = float(input())
+if w%2 ==0 : 
+  print(""yes"")
+else:
+  print(""no"")",15.509775004326936,76.14705226402761,3,1,0
+4A,245969688,"def prof(nums: list):
+    return all([i % 2 == 0 for i in nums])
+
+
+res = []
+w = int(input())
+sp = [2 for i in range(w//2)] if w % 2 == 0 else [3] + [2 for i in range(w//2-1)]
+while len(sp) != 1:
+    min_index = sp.index(min(sp[:-1]))
+    sp[min_index] += 1
+    sp = sp[:-1] if sp[-1] == 1 else sp[:-1] + [sp[-1] - 1]
+    res.append(prof(sp))
+
+print(any(res))",1371.6145240520734,58.254690267433034,2,0,0
+4A,225507580,"n=int(input())
+x=n%2
+y=n//2
+if x==0 and y%2==0:
+    print(""Yes"")
+else:
+    print(""No"")",193.58797503894246,68.48960980802312,3,1,0
+32A,73921389,"i=lambda:map(int,input().split())
+n,d=i();a=[*i()]
+print(sum(abs(x-y)<=d for x in a for y in a)-n)",27.0,74.32675679259947,3,1,0
+32A,137849766,"a,b = map(int,input().split())
+num = list(map(int,input().split()))
+num = sorted(num)
+ans = 0
+if a == 0:
+    print(0)
+else:
+    for i in range(len(num)):
+        for k in range(i+1,len(num)):
+            if num[k] - num[i] <= b:
+                ans += 2
+            elif num[k] - num[i] > b:
+                break
+print(ans)",235.76114431231534,60.591043697121435,2,1,1
+32A,130417385,"n,d=map(int,input().split())
+l=list(map(int,input().split()))
+cnt = 0
+for i in range(len(l)):
+    for j in range(len(l)):
+        if i != j:
+            x=l[i]
+            y=l[j]
+            if abs(x-y) <= d:
+                cnt+=1
+print(cnt)
+
+ 	 	  			 			 				 		      		 	",86.03910001730776,65.17163294107861,2,0,1
+32A,136272729,"#
+n,d=map(int,input().split())
+a=sorted([int(a) for a in input().split()])
+count=0
+for i in range(n):
+    for j in range(i+1,n):
+        if a[j]-a[i]<=d:
+            count+=2
+        else:
+            break
+print(count)",62.26976913547136,84.00040436285234,3,1,1
+32A,9383316,"from collections import Counter
+n, d = [int(x) for x in input().split()]
+a = [int(x) for x in input().split()]
+cnt = Counter(a)
+a = sorted(cnt.items())
+ans = 0
+for i in range(len(a)):
+	ans += a[i][1] * (a[i][1] - 1)
+	for j in range(i + 1, len(a)):
+		if a[j][0] - a[i][0] > d:
+			break
+		ans += a[i][1] * a[j][1] * 2
+print(ans)",262.55713176440725,60.42001185788198,3,1,1
+32A,267583203,"# 36 reconnaissance
+
+n, d = map(int, input().split())
+arr = list(map(int, input().split()))
+brr = sorted(arr)
+# brr.append(-100)
+count = 0
+for i in range(len(brr)-1):
+    if brr[i + 1] != -100:
+        x = brr[i] - brr[i + 1]
+        if x < 0:
+            x *= - 1
+        if x <= d:
+            count += 1
+# print(count)
+
+z = 1
+
+# for i in range(1,count+1):
+#     z *= i
+#     print(f""inner count: {z}"")
+# print(""ans"")
+print(2 ** count -2)",1071.1794711943007,88.66048770574422,2,1,1
+32A,137964971,"n,d = map(eval,input().split())
+list_1 = list(map(eval,input().split()))
+N = 0
+for i in range(len(list_1)):
+    for j in range(len(list_1)):
+        if abs(list_1[i]-list_1[j])<=d:
+            N += 1
+
+print((N+1)//2)",134.43609377704337,67.64450076405312,2,1,0
+32A,107136237,"n,d = map(int,input().split())
+list_=sorted(list(map(int,input().split())))
+count=0
+for i in range(n-1):
+    if list_[i+1]-list_[i]<=d:
+        count +=2 
+print(count)",89.62406251802892,69.04403793394626,3,1,0
+32A,58950256,"n,d = map(int,input().split())
+l = sorted(list(map(int,input().split())))
+count,sum =  0,0
+for i in range(1,n) : count += l[i] - l[i-1] <= d
+for i in range(count+1) : sum += i
+print(2*sum)",223.8724694169871,66.57278941459528,3,1,0
+32A,46680942,"n, d = map(int, input().split())
+a = [int(i) for i in input().split()]
+m = []
+for k in range(n):
+        l = [a[i]-a[k] for i in range(n) if abs(a[i]-a[k]) <= 10]
+        m.append(len(l))
+print(max(m)*(max(m)-1))
+ ",83.25989365817458,68.67862335196351,2,0,0
+59A,85726948,"s=input();print([s.lower(),s.upper()][sum(x<'['for x in s)*2>len(s)])",42.793987519471216,82.97436645803353,3,1,0
+59A,199375056,"""""""
+A. Word: implementation, strings
+
+time limit per test: 2 seconds
+memory limit per test: 256 megabytes
+input: standard input
+output: standard output
+
+Vasya is very upset that many people on the Net mix uppercase and lowercase letters in one word.
+That's why he decided to invent an extension for his favorite browser that would change the letters' register in every word so that it either only consisted of lowercase letters or, vice versa, only of uppercase ones.
+At that as little as possible letters should be changed in the word. For example, the word HoUse must be replaced with house, and the word ViP — with VIP.
+If a word contains an equal number of uppercase and lowercase letters, you should replace all the letters with lowercase ones. For example, maTRIx should be replaced by matrix.
+Your task is to use the given method on one given word.
+
+Input
+The first line contains a word s — it consists of uppercase and lowercase Latin letters and possesses the length from 1 to 100.
+
+Output
+Print the corrected word s. If the given word s has strictly more uppercase letters, make the word written in the uppercase register, otherwise - in the lowercase one.
+""""""
+
+def word():
+    s = input()
+    i_lower = 0
+    i_upper = 0
+    for i in s:
+        if i.islower():
+            i_lower += 1
+        else:
+            i_upper += 1
+
+    if i_lower < i_upper:
+        print(s.upper())
+    else:
+        print(s.lower())
+
+if __name__ == '__main__':
+    word()",86.39999999999999,86.7926195263321,3,1,1
+59A,268649481,"import sys
+input = sys.stdin.read
+
+s = input().strip()
+
+upper_count = sum(1 for c in s if c.isupper())
+lower_count = len(s) - upper_count
+
+if upper_count > lower_count:
+    print(s.upper())
+else:
+    print(s.lower())",18.575424759098897,70.63587335932266,3,1,1
+59A,158242314,"s = input()
+lower_count = sum(1 for c in s if c.islower())
+upper_count = sum(1 for c in s if c.isupper())
+if upper_count > lower_count: print(s.upper())
+else: print(s.lower())",2.3774437510817346,76.0166992945019,3,1,1
+59A,19185713,"s=input()
+c_1,c_2=0,0
+for i in s:
+    if i.isupper():
+        c_1+=1
+    else:
+        c_2+=1
+#print (c_1,c_2)
+if c_2>=c_1:
+    print (s.lower())
+else:
+    print(s.upper())",41.79470570797252,84.60409186259301,3,1,1
+59A,4286521,"import sys
+my_file = sys.stdin
+#my_file = open(""input.txt"", ""r"")
+line = my_file.readline()
+lower, upper = 0, 0
+for char in line:
+    if char.isupper():
+        upper += 1
+    else:
+        lower += 1
+if lower >= upper:
+    print(line.lower())
+else:
+    print(line.upper())",41.79470570797252,81.81319610537669,3,1,1
+59A,86840533,"n=input()
+u=0
+l=0
+for i in n:
+    if i.upper():
+        ++u
+    else :
+        ++l
+if u<=l:
+    print(n.lower())
+else:
+    print(n.upper())",42.65188126189908,65.74091207473005,2,0,0
+59A,220509822,"s = input()
+
+upper = set()
+lower = set()
+
+for char in s:
+    if char.isupper():
+        upper.add(char)
+    
+    elif char.islower():
+        lower.add(char)
+
+u = ''
+for i in upper:
+    u+=i
+
+t = ''
+for j in lower:
+    t+=j
+    
+up = len(u)
+low = len(t)
+
+if low >= up:
+    s = s.lower()
+    print(s)
+
+else:
+    s = s.upper()
+    print(s)",27.0,59.75249155109518,3,1,0
+59A,220758338,"# import sys 
+# sys.stdin = open(""/Users/swasti/Desktop/coding/cp/codeforces/input.txt"", ""r"")
+# sys.stdout = open(""/Users/swasti/Desktop/coding/cp/codeforces/output.txt"", ""w"")
+
+alphabet = ""abcdefghijklmnopqrstuvwxyz""
+word = input()
+if sum([i in alphabet for i in word]) < (len(word)+1) / 2:
+    print(word.upper())
+else:
+    print(word.lower())",86.03910001730776,100.0,3,1,0
+104A,112404248,"a=int(input())
+print((10<a<22)*4+(a==20)*11)",142.3950740849544,80.61768762349101,2,1,0
+104A,189849393,"n = int(input())
+if(n<10 or n > 21):
+  print (0)
+else:
+    mp = dict()
+    for i in range(12):
+      if(i == 0):
+        mp[i] = 0
+      elif(i == 10):
+        mp[i] = 15
+      else:
+        mp[i]= 4
+    
+    print (mp[n-10])",276.55425005563205,62.22151906171853,3,1,0
+104A,123945932,"n = int(input())
+
+pool = [1,2,3,4,5,6,7,8,9,10,10,10,10,11]
+numpool = pool * 4
+numpool.remove(10)
+
+count = 0
+for num in numpool:
+    if num + 10 == n:
+        count = count + 1
+print(count)",62.26976913547136,67.45011981872972,3,1,1
+104A,43522335,"points = int(input())
+if points <= 10:
+    print(0)
+elif points <= 19:
+    print(4)
+elif points == 20:
+    print(15)
+elif points == 21:
+    print(4)
+else:
+    print(0)",53.901214503506004,65.91515777762403,2,0,1
+104A,87432861,"t=int(input())
+x=t-10
+
+if x==1:
+    print(4)
+elif x>=2 and x<=9:
+    print(4)
+elif x==10:
+    print(15)
+elif x==11:
+    print(4)
+else:
+    print(0)",310.93398530137097,62.32803225006178,2,1,1
+104A,169976018,"n=int(input())
+dif=n-10
+if dif>=2 and dif<=9:
+    print(4)
+elif dif==11:
+    print(4)
+elif dif==10:
+    print(15)
+else:
+    print(0)",249.77968097452373,64.74516944135763,3,1,1
+104A,82025698,"n = int(input())
+r = n-10
+if r<=0:
+    print(0)
+elif r in range(1,12):
+    print(4)
+elif r==10:
+    print(15)
+else :
+    print(0)
+ ",121.72512005538482,66.5832313947694,2,1,1
+104A,233720349,"import math
+n = int(input())
+if n == 20:
+    print(15)
+elif n == 10:
+    print(0)
+elif 10 < n < 20:
+    print(4)
+else:
+    print(0)",59.596154435442294,67.7945011182569,2,0,0
+104A,166294041,"n = int(input())
+
+card_value = n - 10 # queen of spades
+
+if card_value > 0 and card_value < 10:
+    print(""4"")
+else:
+    print(""15"")",106.3016990363956,93.30310100154766,2,1,0
+104A,9741875,"a=int(input())
+if(a==10):
+    print(0,end=""\n"")
+else:
+    a=a%10
+    if(a==0):
+        print(15)
+    else:
+        print(4)
+    ",41.79470570797252,69.53738297209314,2,1,0
+146A,39669757,"n=int(input())
+s=input()
+c4=s.count('4')
+c7=s.count('7')
+if c4+c7==n:
+  l=[int(i) for i in s]
+  if sum(l[:n//2])==sum(l[n//2:]):
+    print('YES')
+    exit(0)
+  else:
+    print('NO')
+    exit(0)
+else:
+  print('NO')",106.77626019280808,62.57460486092825,3,1,0
+146A,38123484,"n=int(input())
+m=input()
+x=m.count('4')+m.count('7')
+if x!=n:
+    print('NO')
+else:
+    if m[:n//2].count('4')==m[n//2:].count('4'):
+        print('YES')
+    else:
+        print('NO')",148.26135508445563,65.77340237984626,3,1,0
+146A,167105542,"def main():
+    n=int(input(''))
+    a=input('')
+    if(LuckyTicket(a)):
+        print(""YES"")
+    else:
+        print(""NO"")
+def LuckyTicket(a):
+    for i in range(len(a)):
+        if a[i]!='4' and a[i]!='7':
+            return False
+    if(len(a)==2):
+        return a[0]==a[1];
+    S1=0
+    S2=0
+    n=len(a)
+    Ch1=a[:n//2]
+    Ch2=a[n//2:]
+    N1=int(Ch1)
+    N2=int(Ch2)
+    while(N1!=0):
+        S1+=N1%10
+        N1=N1//10
+    while(N2!=0):
+        S2+=N2%10
+        N2=N2//10
+    return S1==S2
+main()",1126.257332762207,50.26053956649983,2,1,1
+146A,162488646,"length_of_ticket_number = int(input())
+ticket_number = input()
+
+other_digits = length_of_ticket_number - ticket_number.count('4') - ticket_number.count('7')
+
+if other_digits > 0 :
+    print('NO')
+else:
+    s_to_list = list(ticket_number)
+    for i in range(length_of_ticket_number):
+        s_to_list[i] = int(s_to_list[i])
+
+    total_first_half_digits = 0
+    total_second_half_digits = 0
+
+    for n in s_to_list[:len(s_to_list) // 2]:
+        total_first_half_digits += n
+
+    for a in s_to_list[len(s_to_list) // 2:]:
+        total_second_half_digits += a
+
+    if total_first_half_digits == total_second_half_digits:
+        print('YES')
+    else:
+        print('NO')",307.9329231834323,57.29189401035144,3,1,1
+146A,265000937,"n = int(input())
+ticket = input()
+lucky = all(char in ['4', '7'] for char in ticket)
+half_len = n // 2
+sum_first_half = sum(map(int, ticket[:half_len]))
+sum_second_half = sum(map(int, ticket[half_len:]))
+if lucky and sum_first_half == sum_second_half:
+    print(""YES"")
+else:
+    print(""NO"")",86.03910001730776,64.48181755673244,3,1,1
+146A,179459229,"def luckyNumber(n):
+    for i in n:
+        if i != ""4"" and i != ""7"":
+            return False
+    return True
+
+def luckyTicket(n,length):
+    if luckyNumber(n):
+        left = n[:length//2]
+        right = n[length//2:]
+        if left == right or left == right[::-1]:
+            return ""Yes""
+    return ""No""
+length = int(input())
+n = input()
+
+print(luckyTicket(n,length))",433.2886063712457,57.911344727507654,3,1,1
+146A,18881650,"def khoshans(n):
+    if n==0:
+        return 'no'
+    m=0
+    f='yes'
+    while n!=0:
+        y=n%10
+        n=n//10
+        if y!=4 or y!=7:
+            f='no'
+    return f
+def tedad(n):
+    t=0
+    while n!=0:
+        n=n//10
+        t=t+1
+    return t
+c=int(input())
+n=int(input())
+t=tedad(n)
+m=0
+s=0
+while n!=0:
+    for i in range(t//2):
+        m=m+n%10
+        n=n//10
+    for j in range(t//2):
+        s=s+n%10
+        n=n//10
+if m==s and khoshans(n)=='yes':
+    print('YES')
+else:
+    print('NO')",1971.9700703522817,47.73411086481149,2,0,1
+146A,167104620,"def main():
+    n=int(input(''))
+    a=int(input(''))
+    if(LuckyTicket(a)):
+        print(""YES"")
+    else:
+        print(""NO"")
+def LuckyTicket(a):
+    Ch=str(a)
+    while(a!=0):
+        if(a%10!=4 and a%10!=7):
+            return False
+        a=a//10
+    if(len(Ch)==2):
+        return Ch[0]==Ch[1];
+    n=len(Ch)
+    S1=0
+    S2=0
+    Ch1=Ch[:n//2]
+    Ch2=Ch[n//2:]
+    N1=int(Ch1)
+    N2=int(Ch2)
+    while(N1!=0):
+        S1+=N1%10
+        N1=N1//10
+    while(N2!=0):
+        S2+=N2%10
+        N2=N2//10
+    return S1==S2
+main()",1692.1582985307932,48.93372814728402,3,1,0
+146A,19786574,"n=int(input())
+s=input()
+s1=0
+s2=0
+for i in range(n//2):
+    if s[i]!=s[n-i-1]:
+        import sys
+        print('NO')
+        sys.exit(0)
+print ('YES')
+    ",68.33680652339717,66.5753046855467,2,0,0
+146A,52938728,"n = int(input())
+ticket = list(map(int, list(input())))
+if len(list(set(ticket)))>1:
+    if list(set(ticket)) != list(set([4, 7])) or sum(ticket[:n//2]) != sum(ticket[n//2:]) :
+        print('NO')
+        exit()
+else:
+    if sum(ticket[:n//2]) != sum(ticket[n//2:]) :
+        print('NO')
+        exit()
+print('YES')",324.0,62.372522923754644,3,1,0
+233A,234429687,"def permütation(n):
+    if n % 2 == 1:
+        return [-1]
+    else:
+        number_list = [x for x in range(1,n+1)]
+        copy_list = number_list.copy()
+        if n % 2 == 0:
+            for j in range(0, n, 2):
+                number_list[j] = copy_list[j+1]
+                number_list[j+1] = copy_list[j]
+            
+            return number_list
+        else:
+            for k in range(0, n-1):
+                number_list[k] = copy_list[k+1]
+    
+            number_list[-1] = copy_list[0]
+            return number_list            
+
+n = int(input())
+print(*permütation(n))",716.9601953898366,57.38906166727752,3,1,0
+233A,169473686,"n=int(input());print(*(list(range(1,n+1))[::-1],[-1])[n&1])",104.4867642699313,79.89390016215319,2,0,0
+233A,119545358,"n=int(input())
+if(n%2==0):
+    ans=[]
+    for i in range(1,n,2):
+        ans.append(str(i+1))
+        ans.append(str(i))
+    print("" "".join(ans))
+else:
+    print(-1)",85.26282110210897,67.83805293934952,2,0,1
+233A,254086103,"n = int(input())
+
+if n % 2 == 1:
+    print(-1) 
+else:
+    permutation = []
+    for i in range(1, n + 1, 2):
+        permutation.append(i + 1)  
+        permutation.append(i)     
+    print(*permutation)  
+
+  	    	  		 	  		 	 	 	  	 		",159.76422007269255,67.24712427111737,3,1,1
+233A,139403250,"n = int(input())
+a = list(range(n,0,-1))
+if a[n//2]==n//2+1:
+	print(-1)
+else:
+	for i in range(n,0,-1):
+		print(i,end="" "")",219.24725426256592,68.72133715902332,2,0,1
+233A,196247667,"a=int(input())
+if a==1:
+     print(-1)
+if a==2:
+     print(2,1)
+if a==3:
+     print(2,1,4)
+if a==4:
+     print(2,1,4,3)",70.74534403585162,67.34748627551006,2,0,1
+233A,58063537,"n=int(input())
+l=[i for i in range(1,n+1)]
+if n<=1:
+	print(""-1"")
+if n>1:
+	l.pop(0)	
+	l.append(1)
+	print(*l)",94.03808784293817,70.51871933328228,3,1,1
+233A,219163636,"#https://codeforces.com/problemset/problem/233/A
+
+def is_even(number):
+    return True if number%2 == 0 else False
+
+def build_answer_string(number):
+    answer_string = """"
+    even_list = [str(x) for x in range(2, number + 1, 2)]
+    odd_list = [str(x) for x in range(1, number, 2)]
+    for x in range(number//2):
+        answer_string += even_list[x] + odd_list[x]
+    return "" "".join(answer_string)
+def get_perfect_permutation(number):
+    if(is_even(number)):
+        return build_answer_string(number)
+    else:
+        return -1
+
+
+n = int(input())
+answer = get_perfect_permutation(n)
+print(answer)",221.4042372343934,73.0445299792982,3,1,0
+233A,60418293,"n = int(input())
+permutation = [0 for _ in range(n)]
+if n == 1:
+    print(-1)
+else:
+    for i in range(1, n+1):
+        permutation[i-1] = i
+    for i in permutation:
+        print(i, end="" "")",144.11088599895703,68.08084457694153,2,0,0
+233A,118507586,"test = int(input())
+ans = []
+
+if test%2 != 0 :
+    print(-1)
+
+else:
+    for i in range(1, int(test/2)+2 ,2  ):
+        a = i
+        b = i+1
+        ans . append(str(b))
+        ans.append(str(a))
+
+    print("" "".join(ans))
+    ",239.42428129816292,64.38146053745598,3,1,0
+268A,131670468,"_=input
+x,y=zip(*[_().split()for i in'_'*int(_())])
+print(sum(x.count(i)for i in y))",2.3774437510817346,84.44724042799471,2,1,0
+268A,102749520,"n = int(input())
+
+teams = []
+for _ in range(n):
+    teams.append(tuple(map(int,input().split())))
+
+home, away = list(zip(*teams))
+out = 0
+for h in home:
+    out += away.count(h)
+    
+print(out)",2.3774437510817346,74.03933453534945,3,1,0
+268A,104735818,"a=int(input())
+x=a
+c=[]
+d=0
+while a!=0:
+
+    b=list(map(int, input().split()))
+
+    c.append(b)
+    a-=1
+
+for i in c: 
+    for g in range(x):
+        if i[0]==c[g][1]:
+            d+=1
+            
+print(d)
+
+ ",106.3016990363956,63.820742647901454,2,1,1
+268A,216820075,"a = int(input())
+b = []
+for i in range(a):
+    c = list(map(int , input().split()))
+    b.append(c)
+total = 0
+for i in range(a):
+    for j in range(a):
+        if i == j:
+            continue
+        else:
+            if b[i][0] == b[j][1]:
+                total += 1
+print(total)",27.0,64.1689588052692,2,1,1
+268A,162314158,"# Happy_water
+def main():
+    n = int(input())
+    h, a = [], []
+    for i in range(n):
+        x, y = map(int, input().split())
+        h.append(x)
+        a.append(y)
+    ans = 0
+    for i in range(n):
+        for j in range(n):
+            if i != j and h[i] == a[j]:
+                ans += 1
+    print(ans)
+
+
+if __name__ == '__main__':
+    main()",114.22064766172811,76.01057245742957,3,1,1
+268A,213203737,"p=[]
+q=[]
+c=0
+for i in range(int(input())):
+    a,b=[int(i) for i in input().split()]
+    p.append(a)
+    q.append(b)
+    if a in q:
+        c+=1
+    if b in p:
+        c+=1
+print(c)",48.0,64.88901391430564,2,0,1
+268A,182187454,"x = int(input())
+
+l = []
+for _ in range(x):
+    l.append(input().split("" ""))
+
+sum = 0 
+
+for i in range(x):
+    for j in range(len(l[i])):
+        if j != i and (l[i][0] == l[j][1]):
+            sum += 1
+
+print(sum)",86.03910001730776,65.94006856261667,2,0,1
+268A,214393093,"x = int(input(""""))
+list1 = []
+list2 = []
+f = 0
+s = 0
+for i in range(x):
+    y, z = input("""").split()
+    list1.append(int(y))
+    list2.append(int(z))
+for s in range(x):
+    if list1[s] in list2:
+        print(list1)
+        print(list2)
+        f+=list2.count(list1[s])
+print(f)",15.509775004326936,65.47014052342915,2,0,0
+268A,223297131,"host,guest=[],[]
+counter=0
+for i in range(int(input())):
+    h,g=map(int,input().split())
+    host.append(h);guest.append(g)
+for i in range(len(host)):
+    for j in range(len(guest)):
+        if host[i]==guest[j]:
+            counter+=1
+            host[i]=None
+        if guest[i]==host[j]:
+            counter+=1
+            guest[i]=None
+print(counter)",48.0,62.640519451562824,2,0,0
+268A,101387883,"n=int(input())
+l=[]
+count=0
+for i in range(n):
+    l.append(list(map(int,input().strip().split())))
+for i in l:
+    k=l[l.index(i)+1:]
+    for j in k:
+        if(i[0]==j[1] and i[1]==j[0]):
+            count+=2
+        elif(i[0]==j[1]):
+            count+=1
+        elif(i[1]==j[0]):
+            count+=1
+    
+print(count)
+
+
+ ",212.84002937653557,58.35351104130966,3,1,0
+386A,14825864,"n, p = int(input()), sorted((x, i) for i, x in enumerate(map(int, input().split())))
+print(p[-1][1] + 1, p[-2][0])",21.67132888561538,84.68527119129568,3,1,0
+386A,158767022,"input()
+a=[*map(int,input().split())]
+print(a.index(max(a))+1,sorted(a)[-2])",11.60964047443681,82.00171614982087,3,1,0
+386A,162489352,"if __name__ == ""__main__"":
+	n = int(input())
+	offers = list(int(x) for x in input().split())
+
+	winner_pos = offers.index(max(offers))
+
+	offers.pop(winner_pos)
+
+	price_to_pay = max(offers)
+
+	print(winner_pos+1, price_to_pay)
+	 		 		 			 		 			 		 	    		",15.509775004326936,72.82491762469213,3,1,1
+386A,144771675,"import math
+import operator
+n = int(input())
+arr = list(map(int, input().split()))
+m = max(arr)
+pm = arr.index(m) + 1
+arr.sort()
+pk = arr[n-2]
+print(pm,pk)
+
+
+        ",15.509775004326936,70.71304994156309,3,1,1
+386A,81955318,"n=int(input())
+c=input().split("" "",n)
+mx=max(c)
+i=c.index(mx)
+c.remove(mx)
+mx1=max(c)
+print(i+1,int(mx1))",2.3774437510817346,76.68921391438496,3,1,1
+386A,186987706,"n=int(input())
+a=list(map(int,input().split()))
+M=a[0]
+B=0
+L=0
+for i in range(0,n):
+    if a[i]>=M:
+        B=M
+        M=a[i]
+        L=i
+print(L+1,B)",15.509775004326936,68.54295329449474,3,1,1
+386A,100791100,"n=int(input())
+l=list(map(int,input().split()))
+x=l[0]
+i,f=1,0
+for j in range(1,n):
+	if f==0:
+		if x>l[j]:
+			y=l[j]
+			f=1
+	if x<l[j]:
+		y=x
+		x=l[j]
+		i=j+1
+	elif f==1:
+		if y<l[j]:
+			y=l[j]
+print(i,y)",177.62110647077242,59.449159109657536,2,0,1
+386A,262282481,"def second_price_auction():
+    n = int(input(""Enter the number of bidders: ""))
+    bids = list(map(int, input(""Enter the bids separated by spaces: "").split()))
+    
+    highest_bid = max(bids)
+    highest_bid_index = bids.index(highest_bid) + 1
+    
+    bids.remove(highest_bid)
+    second_highest_bid = max(bids)
+    
+    print(highest_bid_index, second_highest_bid)
+
+
+second_price_auction()",2.3774437510817346,74.30834038330268,3,1,0
+386A,190652630,"n=int(input())
+a=[int(a)for a in input().split()]
+a=sorted(a)
+print(1+a.index(max(a)),a[-2])",11.60964047443681,79.14180411840633,3,1,0
+401A,117131173,"import  math
+n,x = map(int,input().split())
+li = list( map(int,input().split()))
+c= abs(sum(li))
+print(math.ceil(c/x))",2.3774437510817346,79.87684562974381,3,1,0
+401A,74000860,"i=lambda:map(int,input().split());n,x=i();a=abs(sum(i()));print(0--a//x)",36.0,74.95393327529723,3,1,0
+401A,86089020,"s = [int(i) for i in input().split()]
+d = [int(i) for i in input().split()]
+a = abs(sum(d))
+answer = int(a/s[1])
+if a%s[1] > 0:
+    answer+=1
+print(answer)",94.88726725405158,69.69649042583539,3,1,0
+401A,69431188,"n,a=map(int,input().split())
+num=list(map(int,input().split()))[:n]
+s=0
+s=sum(num)
+if s<=a and s>0:
+    print(1)
+elif s==0:
+    print(0)
+else:
+    s=abs(s)
+    if s%a==0:
+        print((s//a))
+    else:
+        print((s//a)+1)",830.7026128912613,59.50583485880104,3,1,1
+401A,95693850,"import sys
+input = sys.stdin.readline
+ins = lambda: input().rstrip()
+ini = lambda: int(input().rstrip())
+inm = lambda: map(int, input().rstrip().split())
+inl = lambda: list(map(int, input().split()))
+out = lambda x, s='\n': print(s.join(map(str, x)))
+
+n, x = inm()
+a = inl()
+total = sum(a)
+if total == 0:
+    print(0)
+elif abs(total) < x:
+    print(1)
+else:
+    print((abs(total) + x - 1) // x)",173.4581117878637,58.53972330727147,3,1,1
+401A,37380947,"a,b = map(int,input().split())
+c = list(map(int,input().split()))
+print((abs(sum(c)-1)//b)+1)",48.6,79.4351632867568,2,1,1
+401A,112778295,"n,x=map(int,input().split())
+a=list(map(int,input().split()))
+val=sum(a)//x
+if sum(a)%x>0:
+    val+=1
+print(val)",94.88726725405158,71.42587113530998,3,1,1
+401A,248322190,"[n, x] = map(int, input().split())
+arr = list(map(int, input().split()))
+
+s = 0
+for i in arr:
+    s+=i
+if s - x == 0:
+    print(1)
+else:
+    print(x-1)",76.0782000346155,67.71588657234646,2,0,1
+401A,190269470,"import math 
+n,x=map(int,input().split())
+c=input().split()
+z=0
+p=0
+for i in range(len(c)):
+    z = z + int(c[i])
+if z == 0:
+    print(0)
+else:
+    if abs(z) <= x and abs(z) > 0:
+        print(1)
+    else:
+        print((abs(z)//x+1))",327.74020236207275,60.78628506913305,2,1,0
+401A,56472008,"def cards(arr, absl, n):
+    total = 0
+    for i in arr:
+        total += i
+    total = abs(total)
+    need_card = 0
+
+    if total > absl:
+        while total >= absl:
+            total -= absl
+            need_card += 1
+        if total == 0:
+            return Need_card
+
+    return need_card + 1
+
+def convert(arr):
+    arra = arr.split()
+    array = []
+    for i in arra:
+        array.append(int(i))
+    return array
+
+
+a = input()
+arr = input()
+a = convert(a)
+arr = convert(arr)
+n = a[0]
+absl = a[1]
+
+print(cards(arr, absl, n))",423.78037328306897,55.29448949103061,2,0,0
+448A,89771800,"# import sys
+# sys.stdin=open('input.in','r')
+# sys.stdout=open('output.out','w')
+a1,b1,c1=list(map(int,input().strip().split()[:3]))
+a2,b2,c2=list(map(int,input().strip().split()[:3]))
+n=int(input())
+k1=a1+b1+c1
+k2=a2+b2+c2
+if k1>5:
+	if k1%5==0:
+		s1=int(k1/5)
+	else:
+		s1=int(k1/5)+1
+elif k1==0:
+	s1=0
+else:
+	s1=1
+
+if k2>10:
+	if k2%10==0:
+		s2=int(k2/10)
+	else:
+		s2=int(k2/10)+1
+elif k2==0:
+	s2=0
+else:
+	s2=1
+if s1+s2<=n:
+	print('YES')
+else:
+	print('NO')
+
+ ",1573.3161563097613,68.42574389198403,2,0,0
+448A,21342587,"a = sum(list(map(int,input().split())))
+b = sum(list(map(int,input().split())))
+n = int(input())
+
+if (a+4)//5 + (b+9)//10 <= n: print('YES')
+else: print('NO')",105.48604608143,68.36261111922337,3,1,0
+448A,112326675,"i=lambda k:-(-sum(map(int,input().split()))//k)
+print('YNEOS'[i(5)+i(10)>i(1)::2])",93.20902501875007,75.0498274962184,2,1,0
+448A,213359347,"from math import *
+x1, x2, x3 = map(int, input().split())
+y1, y2, y3 = map(int, input().split())
+n = int(input())
+c = x1 + x2 + x3
+m = y1 + y2 + y3
+if int(ceil(c / 5)) + int(ceil(m / 10)) > n:
+    print(""NO"")
+else:
+    print(""YES"")",152.92539048396907,63.85426855622671,3,1,1
+448A,111625189,"a1,a2,a3=[int(x) for x in input().split()]
+b1,b2,b3=[int(x) for x in input().split()]
+n=int(input())
+if (a1+a2+a3)%5!=0:
+    a=(a1+a2+a3)//5+1
+else:
+    a=(a1+a2+a3)//5
+    
+if (b1+b2+b3)%10!=0:
+    b=(b1+b2+b3)//10+1
+else:
+    b=(b1+b2+b3)//10
+if a+b<=n:
+    print(""YES"")
+else:
+    print(""NO"")
+    
+    ",1477.2335088801503,55.56087737587866,3,1,1
+448A,9620686,"i=input;r=round;a=sum(map(int,i().split()));b=sum(map(int,i().split()));n=int(i());print([""YES"",""NO""][r(a/5)+r(b/10)>n])",62.26976913547136,71.5603740592866,2,1,1
+448A,29829331,"import math
+print('YES' if (math.ceil((sum(list(map(int,input().split())))/5))+math.ceil((sum(list(map(int,input().split())))/10)))<int(input()) else 'NO')",62.26976913547136,81.83377702795524,2,0,1
+448A,84583002,"a,a1,a2=[int(i) for i in input().split()]
+b,b1,b2=[int(x) for x in input().split()]
+c=int(input())
+x=a+a1+a2
+m=b+b1+b2
+l=x//5
+o=m//10
+if x%5!=0:
+    l+=1
+if m%5!=0:
+    o+=1 
+if l+o>c:
+    print('NO')
+else:
+    print('YES')",682.6468598968845,57.502263289727104,3,1,1
+448A,84370772,"def answer():
+    a = sum([int(x) for x in input().split()])
+    b = sum([int(x) for x in input().split()])
+    c = int(input())
+    s_cups = int(a/5)
+    if a%5:s_cups+=1
+    s_shelves = int(a/10)
+    if a%10:s_shelves+=1
+    if c>=s_shelves+s_cups:ans = ""YES""
+    else:ans=""NO""
+
+    return ans
+print(answer())",344.15640006923104,59.37958661367362,2,1,0
+448A,186104766,"a=list(map(int,input().split()))
+b=list(map(int,input().split()))
+n=int(input())
+ans=[]
+br=0
+if sum(a)//n<5:
+    ans.append(""YES"")
+    br+=1
+else:
+    ans.append(""NO"")
+if sum(b)//n<10:
+    ans.append(""YES"")
+    br+=1
+else:
+    ans.append(""NO"")
+if br==2:
+    ans.append(""YES"")
+else:
+    ans.append(""NO"")
+if n==1 and (sum(a)>0 and sum(b)>0):
+    print(""NO"")
+    quit()
+if (sum(a)//5+sum(b)//10)>n:
+    print(""NO"")
+    quit()
+for i in set(ans):
+    print(i)",1006.9223400382471,51.01896667067597,2,0,0
+467A,218245929,"print(sum(eval(input().replace(' ','-'))<-1for _ in ' '*int(input())))",36.0,90.06673689016998,2,1,0
+467A,43994453,"print(sum(eval(input().replace(' ','-'))<-1for _ in ' '*int(input())))",36.0,90.06673689016998,2,1,0
+467A,94500640,"n = int(input())
+c = 0
+for i in range (n):
+    p,q = input().split()
+    if (int(q)-int(p)) >= 2:
+        c+=1
+print(c)",42.793987519471216,70.97158277989028,3,1,0
+467A,141269710,"n = int(input())
+count = 0
+for i in range(n):
+  x = list(map(int, input().split()))
+  if x[1] - x[0] >= 2:
+    count += 1
+  else:
+    pass
+print(count)",42.793987519471216,68.59070924880801,3,1,1
+467A,44430808,"if __name__ == ""__main__"":
+    n = int(input())
+    cnt = 0
+    for _ in range(n):
+        p, q = (map(int, input().split()))
+        if q - p > 1:
+            cnt += 1
+
+    print(cnt)
+ ",94.88726725405158,68.43145617991885,3,1,1
+467A,145163652,"line = input()
+first = line[:1]
+print(first.upper() + line[1:])",2.3774437510817346,79.87684562974381,2,0,1
+467A,160716626,"print(sum(eval(input().replaced(' ','-'))<-1for _ in ''*int(input())))",36.0,90.06673689016998,1,0,1
+467A,46965481,"n=int(input())
+count=0
+while n :
+    (p,k)=map(int,input().split())
+    if p<k:
+        count+=1
+    n-=1
+print(count)",48.6,69.87409083132408,3,1,1
+467A,134083293,"n=int(input(""""))
+
+room=0
+
+for i in range(n):
+    n, m = [int(n) for n in input("""").split()]
+    if n-m or m-n == 2:
+        room=room+1
+
+print(room)",134.43609377704337,68.77503208599303,2,0,0
+467A,44277185,"n=int(input())
+l=[]
+for i in range(n):
+    l.append(input())
+for i in range(len(l)):
+    l[i]=l[i].split()
+print(l)
+c=0
+for i in l:
+    if int(i[1])-1>int(i[0]):
+        c+=1
+print(c)",48.6,65.76383659076718,2,1,0
+492A,166443798,"k,n = int(input()),0
+while k>=0: n += 1; k-=n*(n+1)//2
+print(n-1)",339.97789910421284,71.24657341209996,3,1,0
+492A,111410634,"n,t=int(input()),0
+while n>=0:t+=1;n-=t*(t+1)/2
+print(t-1)",339.97789910421284,71.24657341209996,3,1,0
+492A,145067225,"from re import I
+
+
+n = int(input())
+i = 1
+j = 2
+h = 0
+while n - i >= 0:
+    h += 1
+    n -= i 
+    i += j
+    j += 1
+print(h)",153.75781467764364,64.57387575280252,3,1,0
+492A,200715488,"x=int(input())
+i=0
+
+cl = 0
+pls = 0
+
+
+while True:
+    cl += 1
+    if pls + cl <= x:
+        pls += cl
+        x -= pls
+        i += 1
+    else:
+        break
+
+print(i)",171.17595007788486,62.99918481784786,3,1,1
+492A,144887327,"n = int(input())
+
+i = 1
+
+acu = 0
+
+total = 0
+
+f = 1
+
+if n == 1:
+    print('1')
+    f = 0
+
+while(f == 1):
+    
+    acu += i
+    total += acu
+    
+    if total > n:
+        print(i - 1)
+        break
+
+    i += 1
+
+    ",325.5489532989616,60.89779775653121,3,1,1
+492A,170005027,"a= int(input())
+if a <=10:
+    print(a)
+else:print(a//6)",18.575424759098897,76.47338445371699,2,0,1
+492A,9230385,"i=0
+a=int(input())
+while i*(i+1)*(i+1)//6<=a:
+ i+=1
+print(i-1)",406.1178583528111,70.75389792461479,3,1,1
+492A,50632194,"n=int(input())
+i=1
+k=1
+kol=0
+while 1<=n<=10**4 and i<=n:
+    if i*2<n:
+        kol+=1
+    k+=1
+    i=i+k
+print(kol)",574.4071689486785,63.06614813776224,2,0,1
+492A,147263807,"n=int(input())
+if n<3:
+    print(1)
+else:
+    s=0
+    c=0
+    for i in range(1,100):
+        if n<s:
+            break
+        s=s+i
+        n=n-s
+        c=c+1
+    print(c)",118.87218755408671,63.419110019794395,2,1,0
+492A,204196328,"so_da = int(input())
+tong_da = 0
+so_hang = 0
+so_da_theo_hang = 0
+while tong_da < so_da:
+    so_hang += 1
+    so_da_theo_hang += so_hang
+    tong_da += so_da_theo_hang
+if(so_hang == 1):
+    print(so_hang)
+else:
+    print(so_hang-1)",273.8815201246158,63.75748415370242,3,1,0
+520A,165698486,"input();print(""YNEOS""[len({*input().upper()})<26::2])",2.3774437510817346,84.71624627594792,2,1,0
+520A,267611391,"input();print(""YNEOS""[len({*input().lower()})<26::2])",2.3774437510817346,84.71624627594792,2,1,0
+520A,182425118,"n=int(input())
+a=input()
+b=list(a.lower())
+c=set(b)
+l=len(c)
+if l==26:
+	print(""YES"")
+else:
+	print(""NO"")
+
+		 	 	 				  		 	  			   	  	 	",2.3774437510817346,74.17383745932607,3,1,0
+520A,149900145,"import sys
+n=int(input())
+s=str(input())
+for i in range(97,123):
+    l=chr(i) in s
+    p=chr(i-32) in s
+    if l==False and p==False:
+        print('NO')
+        sys.exit()
+print('YES')
+
+    ",164.4777326328885,64.79305725308157,2,1,1
+520A,234666884,"n=int(input())
+a=input()
+c=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+b=a.lower()
+if n<26:
+    print('NO')
+else:
+    for i in b:
+        if i in c:
+            c.remove(i)
+        else:
+            continue
+    if len(c)>0:
+        print('NO')
+    else:
+        print('YES')
+		 			   		   	 	     	  						",42.793987519471216,62.87088518597895,2,1,1
+520A,49185916,"n=input()
+print(""YES"" if len(set(n))==26 else ""NO"")",2.3774437510817346,88.42299174457497,3,1,1
+520A,221241840,"n=int(input())
+a=input()
+a.lower()
+b=set(a)
+if len(b)>=26:
+    print(""YES"")
+else:
+    print(""NO"")",2.3774437510817346,75.28967674449181,3,1,1
+520A,131307519,"s=input()
+s=s.lower()
+z='abcdefghijklmnopqrstuvwxyz'
+for i in z:
+    if i not in s:
+        print('NO')
+        break
+print('YES')",2.3774437510817346,75.15517382051522,2,1,1
+520A,216659401,"s= int(input())
+k = input()
+count = 0
+if len(k)>25:
+  for i in range(len(k)):
+    if k[i].isalpha():
+      count+=1
+  if count>=26:
+    print(""YES"")
+  else:
+    print(""NO"")
+else:
+  print(""NO"")",48.6,65.00553725491262,2,1,0
+520A,235699917,"def isPangram(size,txt):
+    if size<26:
+        return ""NO""
+    else:
+        txt.upper()
+        d = {}
+        for i in txt:
+            if i in d:
+                d[i]+=1
+            else:
+                d[i]=1
+        if len(d)!=26:
+            return ""YES""
+        else:
+            return ""NO""
+size = int(input())
+txt = input()
+print(isPangram(size,txt))
+  		    		 			 		   		        	",94.88726725405158,60.614456470734915,2,0,0
+599A,261090890,"a,b,c=map(int,input().split())
+print(min(b,a+c)+min(a+b,c)+min(a,b+c))",32.142857142857146,81.72302381761594,3,1,0
+599A,46888850,"x, y, z = map(int, input().split())
+print(min(2*x+2*y, 2*x+2*z, 2*y+2*z, x+y+z))",244.2290213973121,78.68726768864816,3,1,0
+599A,14365448,"a, b, c = [int(i) for i in input().split()]
+print(min((a + b) * 2, a + b + c, (a + c) * 2, (b + c) * 2))",159.45254855459342,79.849298160705,2,1,0
+599A,177015175,"arr = [int(_) for _ in input().split()]
+sarr = sorted(arr)
+
+if sum(arr) <= 2*(sarr[0]+sarr[1]):
+    print(sum(arr))
+else:
+    print(2*(sarr[0]+sarr[1]))
+
+
+ ",89.62406251802892,70.50441279546764,3,1,1
+599A,43521143,"# -*- coding: utf-8 -*-
+# @Date    : 2018-09-28 09:18:53
+# @Author  : raj lath (oorja.halt@gmail.com)
+# @Link    : link
+# @Version : 1.0.0
+
+from sys import stdin
+
+max_val=int(10e12)
+min_val=int(-10e12)
+
+def read_int()     : return int(stdin.readline())
+def read_ints()    : return [int(x) for x in stdin.readline().split()]
+def read_str()     : return input()
+def read_strs()    : return [x for x in stdin.readline().split()]
+
+distances = read_ints()
+print(min(sum(distances), 2 * (sum(distances) - max(distances))))",36.0,94.8623217238233,2,1,1
+599A,85572510,"a,b,c=map(int,input().split())
+print(min((a+b+c),(2*a+2*b),(2*c+2*b)))",147.60241572852468,79.86046396426418,3,1,1
+599A,129326927,"d1, d2, d3 = map(int, input().split())
+print(min(d1 + d2 + d3, 2 * (d1 + d2)))",48.0,82.40158900289892,3,1,1
+599A,105126921,"a,b,c=map(int,input().split())
+if (a*2)+(b*2)<a+b+c:
+    print((a*2)+(b*2))
+else:
+    print(a+b+c)",354.5503215514731,69.70702284711695,2,1,1
+599A,154156234,"a,b,c=[int(x) for x in input().split()]
+if a+b<=c:
+    print(2*(a+b))
+else:
+    if a<b+c:
+        print(a+b+c)
+    else:
+        print(2*(b+c))        ",493.39196241881234,65.44027604235593,2,1,0
+599A,78098112,"pshop=[int(x) for x in input().split()]
+minimum=0
+if pshop[0]<=pshop[1]:
+    if pshop[2]>=(pshop[0]+pshop[1]):
+        minimum=(pshop[0]+pshop[1])*2
+    elif pshop[2]<(pshop[0]+pshop[1]):
+        minimum=(pshop[2]+pshop[0])*2
+    else:
+        minimum=(pshop[0]+pshop[1]+pshop[2])
+if pshop[0]>pshop[1]:
+    if pshop[2]>=(pshop[0]+pshop[1]):
+        minimum=(pshop[0]+pshop[1])*2
+    elif pshop[2]<(pshop[0]+pshop[1]):
+        minimum=(pshop[2]+pshop[1])*2
+    else:
+        minimum=(pshop[0]+pshop[1]+pshop[2])
+print(minimum)",1180.282392093063,54.12847500306223,2,1,0
+624A,15813256,"def main():
+    d, l, v1, v2 = map(int, input().split())
+    left = 0
+    right = l
+
+    while right - left > 0.000000001:
+        mi = (left + right) / 2
+        if v1 * mi + v2 * mi >= l - d:
+            right = mi
+        else:
+            left = mi
+
+    print(right)
+
+# fkgdfkhdf df df 
+
+if __name__ == ""__main__"":
+    main()",566.3777206773193,76.08298824566445,3,1,0
+624A,15797499,"import re
+st = input()
+s = re.split(r'[\s]', st)
+d = int(s[0])
+L = int(s[1])
+v1 = int(s[2])
+v2 = int(s[3])
+print ((L - d) / (v1 + v2))",42.793987519471216,69.97555438192698,3,1,0
+624A,54319605,"ent=input()
+d,l,v1,v2=ent.split()
+print((float(l)-float(d))/(float(v1)+float(v2)))",42.793987519471216,79.26762098940648,2,1,0
+624A,144995114,"d,l,v1,v2 = map(int,input().split())
+print(""%.20f""%((l-d)/(v1+v2)))",86.03910001730776,81.85988972134909,2,1,1
+624A,15817506,"a,b,c,d=map(int,input().split());print((b-a)/(c+d))",42.793987519471216,83.10886938201016,2,1,1
+624A,77988853,"a,b,c,d=map(int,input().split())
+print((b-a)/c+d)",42.793987519471216,83.10886938201016,1,0,1
+624A,113002034,"d,l,a,b=map(int,input().split())
+a=(l-d)/(a+b)
+print(str(a)[:4])",42.793987519471216,76.54221188196857,2,1,1
+624A,117302304,"d,L,v1,v2=map(int,input().split())
+print(f'{(L-d)//(v1+v2):.8f}')
+     ",42.793987519471216,79.26762098940648,2,1,1
+624A,232308516,"import math
+
+d, L, v1, v2 = map(int, input().split())
+t = (L - d) / (v1 + v2)
+print(L / (v1 + v2) if t * v1 >= L else t + d / (v1 + v2))",545.4545454545455,72.0392247294685,3,1,0
+624A,90502454,"width, right, v1, v2=map(int, input().split())
+left=0;t=0
+
+##Here distance between the blocks are decreased at a speed of v1+v2##
+
+d=right;v=v1+v2
+
+##If the decreased values comes close to the width, the required distance to decrease, decreases by the width of LUKE.##
+
+while d:
+	if d<=v:
+		if d<=width:
+			break
+		else:
+			d-=width
+			d/=v
+			t+=d
+	else:
+		d-=v
+		t+=1
+print(t)",379.5490690162063,79.25471339235295,2,1,0

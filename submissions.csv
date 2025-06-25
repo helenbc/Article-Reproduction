@@ -1,0 +1,2954 @@
+problem_id,submission_id,code
+4A,269308927,"w = int(input())
+if w%2 == 0 and w != 2:
+    print(""YES"")
+else:
+    print(""NO"")"
+4A,268967990,"def main():
+    watermelon = int(input())
+    if watermelon % 2 == 0 and watermelon > 2:
+        print(""YES"")
+    else:
+        print(""NO"")
+
+if __name__ == ""__main__"":
+    main()"
+4A,4278977,"n = int(input())
+answer = 'YES' if n > 2 and (n-2)%2 == 0 else 'NO'
+print(answer)"
+4A,204115614,print('YNEOS'[5%~int(input())%2::2])
+4A,143412806,"# x,y=[int(i)for i in input().split()]
+# a,b,c=[int(i)for i in input().split()]
+# f=0
+# if c*2>=a+b:
+#     f+=x*a+y*b
+# elif x>=y:
+#     f+=c*2*y+(x-y)*a
+# else:
+#     f+=c*2*x+(y-x)*b
+# print(f)
+# x=[int(i)for i in input().split()]
+# x.sort()
+# print(x[-1]+x[-2]+x[-3])
+# m='0123456789ABCDEF'
+# g=''
+# i=int(input())
+# def sq(x,b):
+#     r=''
+#     while x:
+#         r=m[x%b]+r
+#         x=x//b
+#     return r
+# def pal(i):
+#     l=0
+#     r=len(i)-1
+#     while l<r:
+#         if i[l]!=i[r]:
+#             return False
+#         l+=1
+#         r-=1
+#     return True
+# for q in range(2,17):
+#     if pal(sq(i,q)):
+#         g+=str(q)+' '
+# if g=='':
+#     print('No')
+# else:
+#     print('Yes')
+#     print(g)
+# k,w=[int(i)for i in input().split()]
+# x=input()
+# b=input()
+# x+=' '+b
+# cnt=0
+# g=''
+# a=[int(i)for i in x.split()]
+# a.sort()
+# for i in range(2*k-1):
+#     if a[i]==a[i+1]:
+#         g+=str(a[i])+' '
+#         cnt+=1
+# print(cnt)
+# print(g)
+#abcd
+ ##.#a
+#...#b
+ #...c
+ ####d
+# n,m=[int(i)for i in input().split()]
+# a=[]
+# ans=0
+# for iin in range(n):
+#     a.append(input())
+# def f (r,c):
+#     cnt=1
+#     for i in range(r-1,-1,-1):
+#         if a[i][c]=='#':break
+#         cnt+=1
+#     for i in range(r+1,n):
+#         if a[i][c]=='#':break
+#         cnt+=1
+#     for i in range(c+1,n):
+#         if a[r][i]=='#':break
+#         cnt+=1
+#     for i in range(c-1,-1,-1):
+#         if a[r][i]=='#':break
+#         cnt+=1
+#     return cnt
+# for i in range(n):
+#     for q in range(m):
+#         if a[i][q]=='#':continue
+#         if f(i,q)>ans:
+#             ans=f(i,q)
+# print(ans)
+# a,b=[int(i)for i in input().split()]
+# c=int(input())
+# a//=c
+# b//=c
+# print(a*b)
+# n=int(input())
+# a=[int(i)for i in input().split()]
+# a.sort(reverse=True)
+# cnt=0
+# g=0
+# for i in range(n):
+#     if g==2:
+#         g=0
+#         continue
+#     cnt+=a[i]
+#     g+=1
+# print(cnt)
+# n=int(input())
+# a={}
+# for i in range(n):
+#     c,l=input().split()
+#     a[c]=l
+# c=[]
+# l=[]
+# g=int(input())
+# x=[]
+# for i in range(g):
+#     t=input().split()
+#     x.append(t)
+# nm,nd=[int(i)for i in input().split('-')]
+# dd=[0,31,29,31,30,31,30,31,31,30,31,30,31]
+# def d_day(date):
+#     m,d=[int(i)for i in date.split('-')]
+#     if m==nm:return nd-d
+#     else:return nd+dd[m]-d  
+# for i in range(g-1,-1,-1):
+#     if d_day(x[i][0])>14:break
+#     l.append(a.get(x[i][1]))
+#     if x[i][1] in c:continue
+#     c.append(x[i][1])
+# b=[]
+# for i in range(len(c)):
+#     if l[i]=='M':
+#         b.append(c[i])
+#         b.append('(M),')
+#     elif l[i]=='H':
+#         b.append(c[i])
+#         b.append('(H),')   
+#     else:
+#         b.append(c[i])
+#         b.append(',')
+# c=''
+# for i in range(len(b)-1):
+#     c+=b[i]
+# if '(H)'in c:
+#     print('Red')
+# elif '(M)'in c:
+#     print('Yellow')
+# else:
+#     print(""Green"")
+# print(c)
+# n=int(input())   
+# a=[[0 for i in range(1000)]for j in range(1000)]
+# x=[0,0,1,-1]
+# y=[-1,1,0,0]
+# nc=0
+# def valid(col,row):
+#     return row>=0 and row<=1000 and col>=0 and col<=1000
+# def comfy(row,col):
+#     cnt=0
+#     if a[row][col]==0:return False
+#     if a[row-1][col]==1 and valid(col,row-1):cnt+=1
+#     if a[row+1][col]==1 and valid(col,row+1):cnt+=1
+#     if a[row][col-1]==1 and valid(col-1,row):cnt+=1 
+#     if a[row][col+1]==1 and valid(col+1,row):cnt+=1
+#     return cnt==3
+# for i in range(n):
+#     row,col=[int(i)for i in input().split()]
+#     if comfy(row+1,col) and valid(col,row+1): 
+#         nc-=1
+#     if comfy(row-1,col) and valid(col,row-1): 
+#         nc-=1
+#     if comfy(row,col+1) and valid(col+1,row): 
+#         nc-=1
+#     if comfy(row,col-1) and valid(col-1,row): 
+#         nc-=1
+#     a[row][col]=1
+#     if comfy(row+1,col) and valid(col,row+1):
+#         nc+=1
+#     if comfy(row-1,col) and valid(col,row-1):
+#         nc+=1
+#     if comfy(row,col+1) and valid(col+1,row):
+#         nc+=1
+#     if comfy(row,col-1) and valid(col-1,row):
+#         nc+=1
+#     if comfy(row,col):
+#         nc+=1
+#     print(nc)
+
+
+# with open('gymnastics.in','r') as f:
+#     k,n=[int(i)for i in f.readline().split()]
+#     r=[]
+#     cnt=0
+#     for i in range(k):
+#         r.append([int(i)for i in f.readline().split()])
+#     def plus(a,b):
+#         num=0
+#         for i in r:
+#             if i.index(a)<i.index(b):
+#                 num+=1
+#         return num==0 or num==k
+#     for a in range(1,n):
+#         for b in range(a+1,n+1):
+#             if plus(a,b):
+#                 cnt+=1
+#     with open('gymnastics.out','w') as f:
+#         f.write(str(cnt))
+
+
+# n=int(input())
+# def turn(a,b):
+#     if a==b:return 0
+#     elif a=='N' and b=='W' or a=='W' and b=='S' or a=='S' and b=='E' or a=='E' and b=='N':return 90
+#     else:return -90
+# for f in range(n):
+#     cnt=0
+#     g=input()
+#     for i in range(len(g)):
+#         if i==len(g)-1:cnt+=turn(g[i],g[0])
+#         else:cnt+=turn(g[i],g[i+1])
+#     if cnt==360:print(""CCW"")
+#     else:print(""CW"")
+
+
+
+
+# import sys
+# sys.stdin = open('guess.in', 'r')
+# sys.stdout = open('guess.out', 'w')
+'''
+    ssssssssssssssssssssredvf
+    ddgfdhb
+    sredhbdfh
+    dfhgtf
+    hsrfgdf
+    htgfrhsrthtfgjd
+    rtgherhgtjkmgcyuj
+    dgsgrst
+    gyzfgsdg
+    dsrfgdzfgdfhgkmcgfj
+    thjftgjfcgyjk hmrtgthbfgj
+    fgjfcgjgjnfg
+    hjghmghv
+    jghmgch,jk.vjhg,mjh,hbvhnftgmmfmd
+    hgsdgvsgbdfxjmn
+    fgjgykhgjjjukghjcfhdrtfgsdcVds
+    gfdbfhnfgnjjgc cfg
+    ngfh
+    mfgjhtdgfbnghmncfdhnghfjghmn cfvgbngcn
+    fnfg
+'''
+# n=int(input())
+# a=input()
+# cnt=1
+# for k in range(1,n+1):
+#     cnt=0
+#     for x in range(n):
+#         if a[x+1:].count(a[x:x+k]):
+#             cnt=1
+#             break
+#     if cnt==0:
+#         print(k)
+#         break
+#         dudhudhudhcudhcduchd
+#         jcdchdchdjchduchducduvgydgvydvef
+#         euhfehefguerf
+    
+
+
+from itertools import permutations
+from typing import MappingView
+# cows = ['Bessie', 'Buttercup', 'Belinda', 'Beatrice', 'Bella', 'Blue', 'Betsy', 'Sue','Stone','Zag']
+# cows.sort()
+# for i in permutations(cows):
+#     print(i)
+
+# from itertools import permutations
+# cs=int(input())
+# a,b=[],[]
+# xb=0
+# for i in range(cs):
+#     t=input().split()
+#     a.append(t[0])
+#     b.append(t[-1])
+# def sb(a,b,c):
+#      return abs(c.index(a)-c.index(b))==1
+# cows = ['Bessie', 'Buttercup', 'Belinda', 'Beatrice', \
+#     'Bella', 'Blue', 'Betsy', 'Sue']
+# cows.sort()
+# for f in permutations(cows):
+#     xb=1
+#     for i in range(cs):
+#         if not sb(a[i],b[i],f):
+#             xb=0
+#             break
+#     if xb==1:
+#         for j in f:
+#             print(j)
+#         break
+        
+
+# n,k=[int(i)for i in input().split()]
+# cnt=0
+# a=input().split()
+# for i in range(n):
+#     if i == 0:
+#         print(a[i], end = '')
+#         cnt += len(a[i])
+#     elif cnt + len(a[i]) <= k:
+#         print(' ' + a[i], end = '')
+#         cnt += len(a[i])
+#     elif cnt + len(a[i]) > k:
+#         print('\n' + a[i], end = '')
+#         cnt = len(a[i])
+
+
+        
+# n=int(input())
+# a=[int(i)for i in input().split()]
+# x=[]
+# cnt=0
+# f=0
+# for b in range(1,n+1):
+#     x.append(b)
+# for i in permutations(x):
+#     cnt=0
+#     for j in range(n-1):
+#         if j==n-2:
+#             f=n-1
+#         if i[j]+i[j+1]!=a[j]:
+#             cnt=1
+#             break
+#         else:
+#             cnt=0
+#     if cnt==0:
+#         for k in i:
+#             if k==i[-1]:
+#                 print(k,end='')
+#                 break
+#             print(k,end=' ')
+#         break
+
+
+
+
+
+# a,b=[int(i)for i in input().split()]
+# x,y=[int(i)for i in input().split()]
+# cnt=0
+# if a>b:
+#     print(0)
+# elif a<=b and x<=y:
+#     print('Impossible')
+# else:
+#     while a<=b:
+#         a+=x
+#         b+=y
+#         cnt+=1
+#     print(cnt)
+        
+
+    
+
+      
+
+
+# n=int(input())
+# o=['','I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX']
+# s=['','X', 'XX', 'XXX', 'XL', 'L', 'LX', 'LXX', 'LXXX', 'XC']
+# t=['','C', 'CC', 'CCC', 'CD', 'D', 'DC', 'DCC', 'DCCC', 'CM']
+# f=['','M', 'MM', 'MMM']
+# print(f[n//1000],end='')
+# print(t[(n//100)%10],end='')
+# print(s[(n//10)%10],end='')
+# print(o[(n//1)%10],end='')
+
+
+# from math import*
+# n=int(input())
+# f=int(sqrt(n))+1
+# for i in range(f):
+#     for j in range(i,f):
+#         for k in range(j,f):
+#             for a in range(k,f):
+#                 if i*i+j*j+k*k+a*a==n:
+#                     print(i,j,k,a)
+
+
+
+
+# n=int(input())
+# a=[int(i)for i in input().split()]
+# st=[]
+# cnt=0
+# for i in range(1,n+1):
+#     st.append(i)
+#     while st and a[cnt]==st[-1] and cnt<n :
+#         st.pop()
+#         cnt+=1
+# if st:
+#     print('Invalid')
+# else:
+#     print('Valid')
+
+
+
+# n=int(input())
+# b=[int(i)for i in input().split()]
+# a=[0]*n
+# for i in range(1,n+1):
+#     a[0]=i
+#     flag=1
+#     for j in range(1,n):
+#         a[j]=b[j-1]-a[j-1]
+#         if a[j]<1 or a[j]>n:flag=0
+#     if len(set(a))!=len(a):flag=0
+#     if flag:
+#         for k in range(n):
+#             if k==n-1:print(a[k])
+#             else:print(a[k],end=' ')
+
+
+
+# k,n=[int(i)for i in input().split()]
+# for i in range(n):
+#     x=int(input())
+#     s=1
+#     l,r=0,0
+#     cnt=0
+#     while 1:
+#         l+=s
+#         cnt+=1
+#         if l+r>=k:
+#             print(cnt)
+#             break
+#         if s>=x:
+#             r+=s
+#             cnt+=1
+#         if l+r>=k:
+#             print(cnt)
+#             break
+#         s+=1
+    
+
+
+# from math import *
+# n=int(input())
+# a=[]
+# h=[]
+# for i in range(n):
+#     t=[int(i)for i in input().split()]
+#     a.append(t)
+# b=[]
+# for i in range(n):
+#     for j in range(1,n):
+#         for k in range(2,n):
+#             if a[i][0]==a[j][0]:
+#                 c=0
+#                 b=0
+#                 c=min(a[i],a[j])
+#                 b=max(a[i],a[j])
+#                 if c[1]==a[i][1] and c[1]!=a[i] or c[1]==a[j][1] and c[1]!=a[j] or c[1]==a[k][1] and c[1]!=a[k]:
+#                     h.append(abs(b[1]-c[1])*abs(a[k][0]-c[0]))
+#             if a[i][0]==a[k][0]:
+#                 c=0
+#                 b=0
+#                 c=min(a[i],a[k])
+#                 b=max(a[i],a[k])
+#                 if c[1]==a[i][1] and c[1]!=a[i] or c[1]==a[j][1] and c[1]!=a[j] or c[1]==a[k][1] and c[1]!=a[k]:
+#                     h.append(abs(b[1]-c[1])*abs(a[j][0]-c[0]))
+#             if a[k][0]==a[j][0]:
+#                 c=0
+#                 b=0
+#                 c=min(a[k],a[j])
+#                 b=max(a[k],a[j])
+#                 if c[1]==a[i][1] and c[1]!=a[i] or c[1]==a[j][1] and c[1]!=a[j] or c[1]==a[k][1] and c[1]!=a[k]: 
+#                     h.append(abs(b[1]-c[1])*abs(a[i][0]-c[0]))
+
+# print(max(h))
+
+
+    
+
+
+
+
+
+
+
+
+
+        
+
+
+# n=int(input())
+# a=input()
+# b=input()
+# cnt=0
+# f=0
+# for i in range(n):
+#     if a[i]!=b[i] and f==1:
+#         pass
+#     elif a[i]!=b[i]:
+#         cnt+=1
+#         f=1
+#     else:
+#         f=0
+# print(cnt)
+
+
+
+
+# n,k=[int(i)for i in input().split()]
+# a=[int(i)for i in input().split()]
+# b=[int(i)for i in input().split()]
+# c=[]
+
+# for i in range(1,n+1):
+#     c.append(i)
+# def next(x):
+#     if x<=a[1] and x>=a[0]:x=a[0]+a[1]-x
+#     if x<=b[1] and x>=b[0]:x=b[0]+b[1]-x
+#     return x
+# for x in range(1,n+1):
+#     cnt = 1
+#     f = next(x)
+#     while f != x:
+#         f = next(f)
+#         cnt += 1
+#     cnt = k % cnt
+#     for j in range(cnt):
+#         f = next(f)
+#     c[f-1]=x
+
+# for i in c:
+#     print(i)
+
+
+
+
+
+
+
+
+# a=[int(i)for i in input().split()]
+# b=[int(i)for i in input().split()]
+# c=[int(i)for i in input().split()]
+# def mix(a,b):
+#     t=min(a[1],b[0]-b[1])
+#     a[1]-=t
+#     b[1]+=t
+# mix(a,b)
+# mix(b,c)
+# mix(c,a)
+# mix(a,b)
+# print(a[1])
+# print(b[1])
+# print(c[1])
+
+
+
+
+
+
+
+# n=int(input())
+# a=[]
+# cnt=0
+# for i in range(n):
+#     t=[int(i)for i in input().split()]
+#     a.append(t)
+# for i in range(1,1001):
+#     zoom=0
+#     for j in range(n):
+#         if i>=a[j][0] and i<=a[j][1]:
+#             zoom+=a[j][2]
+#     cnt=max(cnt,zoom)
+# print(cnt)
+
+
+# from sys import *
+# from copy import *
+# a=[int(i)for i in input().split()]
+# b=[int(i)for i in input().split()]
+# milk=1000
+# res=set()
+# def Tues(a,b,milk):
+#     A=copy(a)
+#     B=copy(b)
+#     A.remove(i)
+#     B.remove(i)
+#     Wed(A,B,milk-i)
+# def Wed(a,b,milk):
+#     A=copy(a)
+#     B=copy(b)
+#     A.remove(i)
+#     B.remove(i)
+#     Thur(A,B,milk-i)
+# def Thur(a,b,milk):
+#     A=copy(a)
+#     B=copy(b)
+#     A.remove(i)
+#     B.remove(i)
+#     Fri(A,B,milk-i)
+# def Fri(a,b,milk):
+#     for i in b:
+#        res.add(milk+i) 
+# Tues(a,b,1000)
+# print(len(res))
+
+
+
+# import math
+# n,k=[int(i)for i in input().split()]
+# ans=math.ceil(n*2/k)
+# if ans==1:
+#     print('2')
+# else:
+#     print(ans)
+
+# n=int(input())
+# while 1:
+#     if n==1:
+#         break
+#     if n%2==0:
+#         n/=2
+#     elif n%3==0:
+#         n/=3
+#     elif n%5==0:
+#         n/=5
+#     else:
+#         print('Irregular Number')
+#         break
+# if n==1:
+#     print('Regular Number')
+
+
+
+
+# n,m=[int(i)for i in input().split()]
+# a=[int(i)for i in input().split()]
+# cnt=m//a[0]
+# rmb=m%a[0]
+# for i in range(1,n):
+#     if a[i]<a[i-1]:
+#         rmb+=a[i-1]*cnt
+#         cnt=rmb//a[i]
+#         rmb=rmb%a[i]
+#     else:
+#         rmb+=cnt*a[i]
+#         cnt=rmb//a[i]
+#         rmb=rmb%a[i]
+# print(cnt*a[-1]+rmb)
+
+
+# n=int(input())
+# a=[]
+# for i in range(n):
+#     t=[int(i)for i in input().split('-')]
+#     a.append(t)
+# ans=min(a)
+# print(f""{ans[0]}-{ans[1]:02d}-{ans[2]:02d}"")
+
+
+
+
+
+# n=int(input())
+# a=[]
+# for i in range(n):
+#     t=[int(i)for i in input().split()]
+#     a.append(t)
+# cnt=-1
+# f=0
+# for j in range(1,4):
+#     under=j
+#     for i in range(n):
+#         if a[i][0]==under:
+#             under=a[i][1]
+#         elif a[i][1]==under:
+#             under=a[i][0]
+#         if a[i][2]==under:
+#             f+=1
+#     cnt=max(f,cnt)
+#     f=0
+# print(cnt)XXX
+
+
+
+
+
+# n=int(input())
+# a=[int(i)for i in input().split()]
+# f=n-1
+
+# for i in range(n-1,0,-1):
+#     if a[i-1]>a[i]:
+#         break
+#     else:
+#         f-=1
+
+# print(f)
+
+
+
+# a=[]
+# n=int(input())
+# for i in range(n):
+#     a.append(input().split()[2:])
+# def solve(a,b):
+#     cnt=1
+#     for i in a:
+#         if i in b:
+#             cnt+=1
+#     return cnt
+# res=0
+# for i in range(n):
+#     for j in range(n):
+#         if a[i]==a[j]:
+#             continue
+#         res=max(solve(a[i],a[j]),res)
+# print(res)        
+
+
+# a=[int(i)for i in input().split()]
+# a.sort()
+# if a[0]+1==a[1] and a[1]+1==a[2]:
+#     print('0')
+# elif a[1]-a[0]==2 or a[2]-a[1]==2:
+#     print('1')
+# else:
+#     print('2')
+# print(max(a[1]-a[0],a[2]-a[1])-1)
+
+
+
+
+
+
+
+
+# n,m=[int(1)for i in input().split()]
+# a,b=[],[]
+# g=[1]*(n+1)
+# for i in range(m):
+#     t=[int(i)for i in input().split()]
+#     a.append(min(t))
+#     b.append(max(t))
+# for i in range(m+1):
+#     for j in range(1,5):
+#         cnt=1
+#         for k in range(n):
+#             if b[k]==i and g[a[k]]==j:
+#                 cnt=0
+#                 break
+#     if cnt:
+#         break
+# print(j,end='')
+# g[i]=j
+
+# n=sorted([int(i)for i in input().split()])
+# y=n[1]
+# x=n[0]
+# z=max(n)-x-y
+# print(x,y,z)
+
+
+
+
+# n=int(input())
+# a=[]
+# lower,upper=0,1000
+# for i in range(n):
+#     t=input().split()
+#     a.append([t[0],int(t[1]),int(t[2])])
+# for i in range(n-1,-1,-1):
+#     if a[i][0]=='off':
+#        lower+=a[i][1]
+#        upper+=a[i][2] 
+#     elif a[i][0]=='none':
+#         lower=max(lower,a[i][1])
+#         upper=min(upper,a[i][2])
+#     else:
+#         upper-=a[i][1]
+#         lower-=a[i][2]
+# print(max(lower,0),upper)       
+# lower,upper=0,1000
+# for i in range(n):
+#     if a[i][0]=='on':
+#        lower+=a[i][1]
+#        upper+=a[i][2] 
+#     elif a[i][0]=='none':
+#         lower=max(lower,a[i][1])
+#         upper=min(upper,a[i][2])
+#     else:
+#         upper-=a[i][1]
+#         lower-=a[i][2]
+# print(max(lower,0),upper)     
+
+
+
+
+# a=[int(i)for i in input().split()]
+# b=[int(i)for i in input().split()]
+# c=[int(i)for i in input().split()]
+# aa=max(a[0],c[0])
+# bb=min(a[3],c[3])
+# qq=min(a[2],c[2])
+# rr=max(a[1],c[1])
+# cc=max(b[0],c[0])
+# dd=min(b[3],c[3])
+# xx=min(b[2],c[2])
+# zz=max(b[1],c[1])
+# ans=(a[2]-a[0])*(a[3]-a[1])+(b[2]-b[0])*(b[3]-b[1])-(max((qq-aa),0)*max((bb-rr),0)+max((xx-cc),0)*max((dd-zz),0))
+# print(max(ans,0))
+
+
+
+# n=int(input())
+# a=[int(i)-1 for i in input().split()]
+# b=[int(i)for i in input().split()]
+# for i in range(3):
+#     t=[0]*n
+#     for j in range(n):
+#         t[j]=b[a[j]]
+#         a=t
+# for i in a:print(i)
+
+
+
+# b=[int(i)for i in input().split()]
+# a=[int(i)for i in input().split()]
+# cnt=0
+# if a[0]<=b[0]<=a[2] and a[1]<=b[1]<=a[3]:
+#     cnt+=1
+# if a[0]<=b[2]<=a[2] and a[1]<=b[1]<=a[3]:
+#     cnt+=1
+# if a[0]<=b[2]<=a[2] and a[1]<=b[3]<=a[3]:
+#     cnt+=1
+# if a[0]<=b[0]<=a[2] and a[1]<=b[3]<=a[3]:
+#     cnt+=1
+# if cnt<=1:
+#     print((b[2]-b[0])*(b[3]-b[1]))
+# if cnt==4:
+#     print(0)
+# if cnt==2:
+#     print(abs((abs(max(a[0],b[0])-min(a[2],b[2])))*(abs(max(a[1],b[1])-min(a[3],b[3])))-(b[2]-b[0])*(b[3]-b[1])))
+
+
+
+# n=int(input())
+# a=[]
+# f=0
+# s=0
+# x=0
+# for i in range(n):
+#     t=[int(i)for i in input().split()]
+#     a.append(t)
+# b=[0]*1001
+# for i in range(n):
+#     for j in range(a[i][0],a[i][1]):
+#         b[j]+=1
+#         if b[j]==1:
+#             f+=1
+# for i in range(n):
+#     s=0
+#     for j in range(a[i][0],a[i][1]):
+#         if b[j]==1:
+#             s+=1
+#     x=max(x,f-s)
+# print(x)
+        
+
+# n=int(input())
+# a=[int(i)for i in input().split()]
+# cnt=n
+# for i in range(n):
+#     for j in range(i+1,n):
+#         t=a[i:j+1]
+#         if sum(t)/len(t) in t:
+#             cnt+=1
+# print(cnt)
+
+        
+# a,b,c,d=[int(i)for i in input().split()]
+# print(min(min(abs(d-a),abs(c-a))+min(abs(d-b),abs(c-b)),abs(b-a)))
+
+
+# n=int(input())
+# a=[]
+# cnt=0
+# for i in range(n):
+#     a.append(int(input()))
+# b=sorted(a)
+# for i in range(n):
+#     if a[i]!=b[i]:
+#         cnt+=1
+# print(cnt-1)
+
+
+# a=input()
+# b=input()
+# cnt=1
+# for i in range(len(b)-1):
+#     if b[i]==b[i+1]:
+#         cnt+=1
+#     elif a.index(b[i])>a.index(b[i+1]):
+#         cnt+=1
+# print(cnt)
+
+# n=int(input())
+# a=[[0]*3 for i in range (101)]
+# b=[[0]*3 for i in range (101)]
+# cnt=0
+# xyz=3
+# zyx=0
+# for i in range(n):
+#     t=input().split()
+#     if t[1]=='Bessie':b[int(t[0])][0]=int(t[2])  
+#     elif t[1]=='Mildred':b[int(t[0])][1]=int(t[2])
+#     else:b[int(t[0])][2]=int(t[2])
+# a[0][0],a[0][1],a[0][2]==7
+# def highest(i,j):
+#     t=max(a[i][0],a[i][1],a[i][2])
+#     return t==a[i][j]
+# for i in range(1,101):
+#     a[i][0]=a[i-1][0]+b[i][0]
+#     a[i][1]=a[i-1][1]+b[i][1]
+#     a[i][2]=a[i-1][2]+b[i][2]
+#     if highest(i,0)!=highest(i-1,0) or highest(i,1)!=highest(i-1,1) or highest(i,2)!=highest(i-1,2):
+#         cnt+=1
+# print(cnt)
+
+
+
+
+# n=int(input())
+# f=0
+# even,odd=0,0
+# a=[int(i)for i in input().split()]
+# for i in a:
+#     if i%2==0:
+#         even+=1
+#     else:
+#         odd+=1
+# while even<odd:
+#     even+=1
+#     odd-=2
+# if even>odd:
+#     even=odd+1   
+# print(even+odd)
+
+
+
+# a=[1,0,0,0,1,0,1,0,2,1]
+# n=input()
+# cnt=0
+# for i in n:
+#     cnt+=a[int(i)]
+# print(cnt)
+
+
+# x,cnt,a=int(input()),0,sorted([int(i)for i in input().split()])
+# for i in range(-2,-(x*2+2),-2):cnt+=a[i]
+# print(cnt)
+
+
+
+
+# n=int(input())
+# cow=sorted([int(i)for i in input().split()],reverse=True)
+# high=[int(i)for i in input().split()]
+# cnt,f,h=1,0,0
+# for i in cow:
+#     for j in high:
+#         if i<=j:
+#             f+=1
+#     cnt*=f-h
+#     f=0
+#     h+=1
+# print(cnt)
+
+# n,l=[int(i)for i in input().split()]
+# a=sorted([int(i)for i in input().split()],reverse=True)
+# def coconut():
+#     h=n
+#     while h>0 and a[h-1]<h:
+#         h-=1
+#     return h
+# h=coconut()
+# while l and h>=0:
+#     a[h]+=1
+#     h-=1
+#     l-=1
+# a.sort(reverse=True)
+# h=coconut()
+# print(h)
+
+# z=0
+# n,m=[int(i)for i in input().split()]
+# a=[]
+# x,y=[1,-1,-1,1],[1,-1,-1,1]
+# st=set()
+# for i in range(n):
+#     a.append(input())
+# print(a)
+# def isok(x,y):
+#     if x>-1 and x<m and y>-1 and y<n:
+#         return True
+#     return False
+# for i in range(n):
+#     for j in range(m):
+#         if a[i][j]!='G':
+#             continue
+#         for k in range(2):
+#             cnt=0
+#             s=x[k]
+#             if isok((a[i]+s).index(),(a[i][j]).index()) and a[i][j]=='C':
+#                 cnt+=1
+#         for k in range(2):
+#             cnt=0
+#             s=x[k]
+#             if isok(a[i],a[i][j]+s) and a[i][j]=='C':
+#                 cnt+=1
+#         if cnt==2:
+#             st.add((tuple(a[i][j])).sort())
+#         else:
+#             cnt+=1
+#         z+=cnt
+# print(z)     
+ 
+
+
+
+# k,n=[int(i)for i in input().split()]
+# a=[]
+# g=0
+# cnt=0
+# for i in range(k):
+#     a.append([int(i)for i in input().split()])
+# for i in range(1,n+1):
+#     for j in range(i+1,n+1):
+#         for z in range(k):
+#             if a[z].index(i)>a[z].index(j):
+#                 g+=1
+#             elif a[z].index(i)<a[z].index(j):
+#                 g-=1
+#         if g==k or g==k-2*k:
+#             cnt+=1
+#         g=0
+# print(cnt)
+
+            
+
+# import sys   
+# x=sorted(['Beatrice','Sue','Belinda','Bessie','Betsy','Blue','Bella','Buttercup'])
+# n=int(input())
+# a=[]
+# cnt=0
+# for i in range(n):
+#     t=input().split()
+#     a.append([t[0],t[-1]])
+# for i in permutations(x):
+#     for j in range(n):
+#         if abs(i.index(a[j][0])-i.index(a[j][1]))!=1:
+#             cnt=1
+#     if cnt==0:
+#         for k in i:
+#             print(k)
+#         sys.exit()
+#     cnt=0
+
+
+
+
+
+# n=int(input())
+# a=[int(i)for i in input().split()]
+# b=[int(i)for i in input().split()]
+# ace=[a[i]-b[i]for i in input().split()]
+# cnt=0
+# while 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111:
+#     for i in range(n):
+#         f,f1,f2=0,0,0
+#         if ace[i]==0:
+#             f1,f2=1,1
+#         elif ace[i]>0 :
+#             ace[i]-=1
+#             if f1==0:
+#                 cnt+=1
+#             f,f1,f2=0,1,0
+#         elif ace[i]<0:
+#             ace[i]+=1
+#             if f2==0:
+#                 cnt==1
+#             f,f1,f2=0,0,1
+        
+        
+
+        
+        
+        
+        
+
+
+
+
+# n=int(input())
+# a=input()
+# h=0
+# g=0
+# for i in a:
+#     if i=='G':
+#         g+=1
+#     else:
+#         h+=1
+# print(g)
+# print(h)
+# print(g-1+h-1)
+
+
+
+
+# n,s,cnt=int(input()),input(),0
+# for i in range(n-2):
+#     h,g=0,0
+#     for j in range(i,n):
+#         if s[j]=='G':
+#             g+=1
+#         else:
+#             h+=1
+#         if j-i>1 and (h==1 or g==1):
+#             cnt+=1
+#         if h>1 and g>1:
+#             break
+# print(cnt)
+
+
+
+
+
+
+
+
+
+
+# t=int(input())
+# def score():
+#     cnt=0
+#     n,k=[int(i) for i in input().split()]
+#     a=[]
+#     for i in range(n):
+#         a.append(input())
+#     if k>=1:
+#         rd,dr=1,1
+#         for j in range(n):
+#             if a[0][j]=='H' or a[j][-1]=='H':
+#                 rd=0
+#             if a[j][0]=='H' or a[-1][j]=='H':
+#                 dr=0
+#         cnt+=rd+dr
+#     if k>=2:
+#         for i in range(1,n-1):
+#             rdr,drd=1,1
+#             for j in range(0,n):
+#                 if j<i and a[j][0]=='H':
+#                     drd=0
+#                 if a[i][j]=='H':
+#                     drd=0
+#                 if j>i and a[j][-1]=='H':
+#                     drd=0
+#                 if i<j and a[-1][j]=='H':
+#                     rdr=0
+#                 if a[j][i]=='H':
+#                     rdr=0
+#                 if i>j and a[0][j]=='H':
+#                     rdr=0
+#         cnt+=rdr+drd
+#         if k>=3:
+#             for i in range(1,n-1):
+#                 for j in range(1,n-1):
+#                     if a[i][j]=='H':continue
+#                     rdrd=1
+#                     for l in range(n):
+#                         if l<=i and a[0][l]=='H':rdrd=0
+#                         if l<=i and a[l][j]=='H':rdrd=0
+#                         if l>=j and a[i][l]=='H':rdrd=0
+#                         if l>=i and a[l][n-1]=='H':rdrd=0
+#                     cnt+=rdrd
+#                     drdr=1
+#                     for l in range(n):
+#                         if l<=i and a[0][l]=='H':drdr=0
+#                         if l<=i and a[l][j]=='H':drdr=0
+#                         if l>=j and a[i][l]=='H':drdr=0
+#                         if l>=i and a[l][n-1]=='H':drdr=0
+#                     cnt+=drdr
+#     print(cnt)
+# for i in range(t):
+#     score()
+    
+
+
+
+
+
+# n=int(input())
+# a=input()
+# b=input()
+# cnt=0
+# flag=0
+# for i in range(n):
+#     if a[i]!=b[i] and flag==1:cnt+=0
+#     elif a[i]!=b[i]:
+#         cnt+=1
+#         flag=1
+#     else:flag=0
+# print(cnt)
+
+
+
+# n=int(input())
+# a=[]
+# o=0
+# cnt=0
+# for i in range(n):
+#     t=input().split()
+#     a.append(t[2:])
+# def solve(i,j):
+#     cnt=0
+#     for k in a[i]:
+#         if k in a[j]:
+#             cnt+=1
+#     return cnt
+# ans=0
+# for i in range(n):
+#     for j in range(n):
+#         if i==j:continue
+#         else:ans=max(ans,solve(i,j))
+# print(ans+1)
+
+
+
+
+n=int(input())
+if n!=2 and n%2==0:print('YES')
+else:print('NO')"
+4A,269005075,"w = int(input())
+if w % 2 == 0:
+    print(""YES"")
+else:
+    print(""NO"")"
+4A,269170574,"def main():
+    n=int(input())
+    if n%2==0:
+        return 'YES'
+    return 'NO'"
+4A,269308016,"w = float(input())
+if w%2 ==0 : 
+  print(""yes"")
+else:
+  print(""no"")"
+4A,245969688,"def prof(nums: list):
+    return all([i % 2 == 0 for i in nums])
+
+
+res = []
+w = int(input())
+sp = [2 for i in range(w//2)] if w % 2 == 0 else [3] + [2 for i in range(w//2-1)]
+while len(sp) != 1:
+    min_index = sp.index(min(sp[:-1]))
+    sp[min_index] += 1
+    sp = sp[:-1] if sp[-1] == 1 else sp[:-1] + [sp[-1] - 1]
+    res.append(prof(sp))
+
+print(any(res))"
+4A,225507580,"n=int(input())
+x=n%2
+y=n//2
+if x==0 and y%2==0:
+    print(""Yes"")
+else:
+    print(""No"")"
+32A,73921389,"i=lambda:map(int,input().split())
+n,d=i();a=[*i()]
+print(sum(abs(x-y)<=d for x in a for y in a)-n)"
+32A,137849766,"a,b = map(int,input().split())
+num = list(map(int,input().split()))
+num = sorted(num)
+ans = 0
+if a == 0:
+    print(0)
+else:
+    for i in range(len(num)):
+        for k in range(i+1,len(num)):
+            if num[k] - num[i] <= b:
+                ans += 2
+            elif num[k] - num[i] > b:
+                break
+print(ans)"
+32A,130417385,"n,d=map(int,input().split())
+l=list(map(int,input().split()))
+cnt = 0
+for i in range(len(l)):
+    for j in range(len(l)):
+        if i != j:
+            x=l[i]
+            y=l[j]
+            if abs(x-y) <= d:
+                cnt+=1
+print(cnt)
+
+ 	 	  			 			 				 		      		 	"
+32A,136272729,"#
+n,d=map(int,input().split())
+a=sorted([int(a) for a in input().split()])
+count=0
+for i in range(n):
+    for j in range(i+1,n):
+        if a[j]-a[i]<=d:
+            count+=2
+        else:
+            break
+print(count)"
+32A,9383316,"from collections import Counter
+n, d = [int(x) for x in input().split()]
+a = [int(x) for x in input().split()]
+cnt = Counter(a)
+a = sorted(cnt.items())
+ans = 0
+for i in range(len(a)):
+	ans += a[i][1] * (a[i][1] - 1)
+	for j in range(i + 1, len(a)):
+		if a[j][0] - a[i][0] > d:
+			break
+		ans += a[i][1] * a[j][1] * 2
+print(ans)"
+32A,267583203,"# 36 reconnaissance
+
+n, d = map(int, input().split())
+arr = list(map(int, input().split()))
+brr = sorted(arr)
+# brr.append(-100)
+count = 0
+for i in range(len(brr)-1):
+    if brr[i + 1] != -100:
+        x = brr[i] - brr[i + 1]
+        if x < 0:
+            x *= - 1
+        if x <= d:
+            count += 1
+# print(count)
+
+z = 1
+
+# for i in range(1,count+1):
+#     z *= i
+#     print(f""inner count: {z}"")
+# print(""ans"")
+print(2 ** count -2)"
+32A,137964971,"n,d = map(eval,input().split())
+list_1 = list(map(eval,input().split()))
+N = 0
+for i in range(len(list_1)):
+    for j in range(len(list_1)):
+        if abs(list_1[i]-list_1[j])<=d:
+            N += 1
+
+print((N+1)//2)"
+32A,107136237,"n,d = map(int,input().split())
+list_=sorted(list(map(int,input().split())))
+count=0
+for i in range(n-1):
+    if list_[i+1]-list_[i]<=d:
+        count +=2 
+print(count)"
+32A,58950256,"n,d = map(int,input().split())
+l = sorted(list(map(int,input().split())))
+count,sum =  0,0
+for i in range(1,n) : count += l[i] - l[i-1] <= d
+for i in range(count+1) : sum += i
+print(2*sum)"
+32A,46680942,"n, d = map(int, input().split())
+a = [int(i) for i in input().split()]
+m = []
+for k in range(n):
+        l = [a[i]-a[k] for i in range(n) if abs(a[i]-a[k]) <= 10]
+        m.append(len(l))
+print(max(m)*(max(m)-1))
+ "
+59A,85726948,"s=input();print([s.lower(),s.upper()][sum(x<'['for x in s)*2>len(s)])"
+59A,199375056,"""""""
+A. Word: implementation, strings
+
+time limit per test: 2 seconds
+memory limit per test: 256 megabytes
+input: standard input
+output: standard output
+
+Vasya is very upset that many people on the Net mix uppercase and lowercase letters in one word.
+That's why he decided to invent an extension for his favorite browser that would change the letters' register in every word so that it either only consisted of lowercase letters or, vice versa, only of uppercase ones.
+At that as little as possible letters should be changed in the word. For example, the word HoUse must be replaced with house, and the word ViP — with VIP.
+If a word contains an equal number of uppercase and lowercase letters, you should replace all the letters with lowercase ones. For example, maTRIx should be replaced by matrix.
+Your task is to use the given method on one given word.
+
+Input
+The first line contains a word s — it consists of uppercase and lowercase Latin letters and possesses the length from 1 to 100.
+
+Output
+Print the corrected word s. If the given word s has strictly more uppercase letters, make the word written in the uppercase register, otherwise - in the lowercase one.
+""""""
+
+def word():
+    s = input()
+    i_lower = 0
+    i_upper = 0
+    for i in s:
+        if i.islower():
+            i_lower += 1
+        else:
+            i_upper += 1
+
+    if i_lower < i_upper:
+        print(s.upper())
+    else:
+        print(s.lower())
+
+if __name__ == '__main__':
+    word()"
+59A,268649481,"import sys
+input = sys.stdin.read
+
+s = input().strip()
+
+upper_count = sum(1 for c in s if c.isupper())
+lower_count = len(s) - upper_count
+
+if upper_count > lower_count:
+    print(s.upper())
+else:
+    print(s.lower())"
+59A,158242314,"s = input()
+lower_count = sum(1 for c in s if c.islower())
+upper_count = sum(1 for c in s if c.isupper())
+if upper_count > lower_count: print(s.upper())
+else: print(s.lower())"
+59A,19185713,"s=input()
+c_1,c_2=0,0
+for i in s:
+    if i.isupper():
+        c_1+=1
+    else:
+        c_2+=1
+#print (c_1,c_2)
+if c_2>=c_1:
+    print (s.lower())
+else:
+    print(s.upper())"
+59A,4286521,"import sys
+my_file = sys.stdin
+#my_file = open(""input.txt"", ""r"")
+line = my_file.readline()
+lower, upper = 0, 0
+for char in line:
+    if char.isupper():
+        upper += 1
+    else:
+        lower += 1
+if lower >= upper:
+    print(line.lower())
+else:
+    print(line.upper())"
+59A,86840533,"n=input()
+u=0
+l=0
+for i in n:
+    if i.upper():
+        ++u
+    else :
+        ++l
+if u<=l:
+    print(n.lower())
+else:
+    print(n.upper())"
+59A,177781379,"s=input()
+print(s.lower())"
+59A,220509822,"s = input()
+
+upper = set()
+lower = set()
+
+for char in s:
+    if char.isupper():
+        upper.add(char)
+    
+    elif char.islower():
+        lower.add(char)
+
+u = ''
+for i in upper:
+    u+=i
+
+t = ''
+for j in lower:
+    t+=j
+    
+up = len(u)
+low = len(t)
+
+if low >= up:
+    s = s.lower()
+    print(s)
+
+else:
+    s = s.upper()
+    print(s)"
+59A,220758338,"# import sys 
+# sys.stdin = open(""/Users/swasti/Desktop/coding/cp/codeforces/input.txt"", ""r"")
+# sys.stdout = open(""/Users/swasti/Desktop/coding/cp/codeforces/output.txt"", ""w"")
+
+alphabet = ""abcdefghijklmnopqrstuvwxyz""
+word = input()
+if sum([i in alphabet for i in word]) < (len(word)+1) / 2:
+    print(word.upper())
+else:
+    print(word.lower())"
+104A,112404248,"a=int(input())
+print((10<a<22)*4+(a==20)*11)"
+104A,189849393,"n = int(input())
+if(n<10 or n > 21):
+  print (0)
+else:
+    mp = dict()
+    for i in range(12):
+      if(i == 0):
+        mp[i] = 0
+      elif(i == 10):
+        mp[i] = 15
+      else:
+        mp[i]= 4
+    
+    print (mp[n-10])"
+104A,123945932,"n = int(input())
+
+pool = [1,2,3,4,5,6,7,8,9,10,10,10,10,11]
+numpool = pool * 4
+numpool.remove(10)
+
+count = 0
+for num in numpool:
+    if num + 10 == n:
+        count = count + 1
+print(count)"
+104A,43522335,"points = int(input())
+if points <= 10:
+    print(0)
+elif points <= 19:
+    print(4)
+elif points == 20:
+    print(15)
+elif points == 21:
+    print(4)
+else:
+    print(0)"
+104A,87432861,"t=int(input())
+x=t-10
+
+if x==1:
+    print(4)
+elif x>=2 and x<=9:
+    print(4)
+elif x==10:
+    print(15)
+elif x==11:
+    print(4)
+else:
+    print(0)"
+104A,169976018,"n=int(input())
+dif=n-10
+if dif>=2 and dif<=9:
+    print(4)
+elif dif==11:
+    print(4)
+elif dif==10:
+    print(15)
+else:
+    print(0)"
+104A,82025698,"n = int(input())
+r = n-10
+if r<=0:
+    print(0)
+elif r in range(1,12):
+    print(4)
+elif r==10:
+    print(15)
+else :
+    print(0)
+ "
+104A,233720349,"import math
+n = int(input())
+if n == 20:
+    print(15)
+elif n == 10:
+    print(0)
+elif 10 < n < 20:
+    print(4)
+else:
+    print(0)"
+104A,166294041,"n = int(input())
+
+card_value = n - 10 # queen of spades
+
+if card_value > 0 and card_value < 10:
+    print(""4"")
+else:
+    print(""15"")"
+104A,9741875,"a=int(input())
+if(a==10):
+    print(0,end=""\n"")
+else:
+    a=a%10
+    if(a==0):
+        print(15)
+    else:
+        print(4)
+    "
+146A,39669757,"n=int(input())
+s=input()
+c4=s.count('4')
+c7=s.count('7')
+if c4+c7==n:
+  l=[int(i) for i in s]
+  if sum(l[:n//2])==sum(l[n//2:]):
+    print('YES')
+    exit(0)
+  else:
+    print('NO')
+    exit(0)
+else:
+  print('NO')"
+146A,38123484,"n=int(input())
+m=input()
+x=m.count('4')+m.count('7')
+if x!=n:
+    print('NO')
+else:
+    if m[:n//2].count('4')==m[n//2:].count('4'):
+        print('YES')
+    else:
+        print('NO')"
+146A,167105542,"def main():
+    n=int(input(''))
+    a=input('')
+    if(LuckyTicket(a)):
+        print(""YES"")
+    else:
+        print(""NO"")
+def LuckyTicket(a):
+    for i in range(len(a)):
+        if a[i]!='4' and a[i]!='7':
+            return False
+    if(len(a)==2):
+        return a[0]==a[1];
+    S1=0
+    S2=0
+    n=len(a)
+    Ch1=a[:n//2]
+    Ch2=a[n//2:]
+    N1=int(Ch1)
+    N2=int(Ch2)
+    while(N1!=0):
+        S1+=N1%10
+        N1=N1//10
+    while(N2!=0):
+        S2+=N2%10
+        N2=N2//10
+    return S1==S2
+main()"
+146A,162488646,"length_of_ticket_number = int(input())
+ticket_number = input()
+
+other_digits = length_of_ticket_number - ticket_number.count('4') - ticket_number.count('7')
+
+if other_digits > 0 :
+    print('NO')
+else:
+    s_to_list = list(ticket_number)
+    for i in range(length_of_ticket_number):
+        s_to_list[i] = int(s_to_list[i])
+
+    total_first_half_digits = 0
+    total_second_half_digits = 0
+
+    for n in s_to_list[:len(s_to_list) // 2]:
+        total_first_half_digits += n
+
+    for a in s_to_list[len(s_to_list) // 2:]:
+        total_second_half_digits += a
+
+    if total_first_half_digits == total_second_half_digits:
+        print('YES')
+    else:
+        print('NO')"
+146A,265000937,"n = int(input())
+ticket = input()
+lucky = all(char in ['4', '7'] for char in ticket)
+half_len = n // 2
+sum_first_half = sum(map(int, ticket[:half_len]))
+sum_second_half = sum(map(int, ticket[half_len:]))
+if lucky and sum_first_half == sum_second_half:
+    print(""YES"")
+else:
+    print(""NO"")"
+146A,179459229,"def luckyNumber(n):
+    for i in n:
+        if i != ""4"" and i != ""7"":
+            return False
+    return True
+
+def luckyTicket(n,length):
+    if luckyNumber(n):
+        left = n[:length//2]
+        right = n[length//2:]
+        if left == right or left == right[::-1]:
+            return ""Yes""
+    return ""No""
+length = int(input())
+n = input()
+
+print(luckyTicket(n,length))"
+146A,18881650,"def khoshans(n):
+    if n==0:
+        return 'no'
+    m=0
+    f='yes'
+    while n!=0:
+        y=n%10
+        n=n//10
+        if y!=4 or y!=7:
+            f='no'
+    return f
+def tedad(n):
+    t=0
+    while n!=0:
+        n=n//10
+        t=t+1
+    return t
+c=int(input())
+n=int(input())
+t=tedad(n)
+m=0
+s=0
+while n!=0:
+    for i in range(t//2):
+        m=m+n%10
+        n=n//10
+    for j in range(t//2):
+        s=s+n%10
+        n=n//10
+if m==s and khoshans(n)=='yes':
+    print('YES')
+else:
+    print('NO')"
+146A,167104620,"def main():
+    n=int(input(''))
+    a=int(input(''))
+    if(LuckyTicket(a)):
+        print(""YES"")
+    else:
+        print(""NO"")
+def LuckyTicket(a):
+    Ch=str(a)
+    while(a!=0):
+        if(a%10!=4 and a%10!=7):
+            return False
+        a=a//10
+    if(len(Ch)==2):
+        return Ch[0]==Ch[1];
+    n=len(Ch)
+    S1=0
+    S2=0
+    Ch1=Ch[:n//2]
+    Ch2=Ch[n//2:]
+    N1=int(Ch1)
+    N2=int(Ch2)
+    while(N1!=0):
+        S1+=N1%10
+        N1=N1//10
+    while(N2!=0):
+        S2+=N2%10
+        N2=N2//10
+    return S1==S2
+main()"
+146A,19786574,"n=int(input())
+s=input()
+s1=0
+s2=0
+for i in range(n//2):
+    if s[i]!=s[n-i-1]:
+        import sys
+        print('NO')
+        sys.exit(0)
+print ('YES')
+    "
+146A,52938728,"n = int(input())
+ticket = list(map(int, list(input())))
+if len(list(set(ticket)))>1:
+    if list(set(ticket)) != list(set([4, 7])) or sum(ticket[:n//2]) != sum(ticket[n//2:]) :
+        print('NO')
+        exit()
+else:
+    if sum(ticket[:n//2]) != sum(ticket[n//2:]) :
+        print('NO')
+        exit()
+print('YES')"
+233A,234429687,"def permütation(n):
+    if n % 2 == 1:
+        return [-1]
+    else:
+        number_list = [x for x in range(1,n+1)]
+        copy_list = number_list.copy()
+        if n % 2 == 0:
+            for j in range(0, n, 2):
+                number_list[j] = copy_list[j+1]
+                number_list[j+1] = copy_list[j]
+            
+            return number_list
+        else:
+            for k in range(0, n-1):
+                number_list[k] = copy_list[k+1]
+    
+            number_list[-1] = copy_list[0]
+            return number_list            
+
+n = int(input())
+print(*permütation(n))"
+233A,169473686,"n=int(input());print(*(list(range(1,n+1))[::-1],[-1])[n&1])"
+233A,119545358,"n=int(input())
+if(n%2==0):
+    ans=[]
+    for i in range(1,n,2):
+        ans.append(str(i+1))
+        ans.append(str(i))
+    print("" "".join(ans))
+else:
+    print(-1)"
+233A,254086103,"n = int(input())
+
+if n % 2 == 1:
+    print(-1) 
+else:
+    permutation = []
+    for i in range(1, n + 1, 2):
+        permutation.append(i + 1)  
+        permutation.append(i)     
+    print(*permutation)  
+
+  	    	  		 	  		 	 	 	  	 		"
+233A,139403250,"n = int(input())
+a = list(range(n,0,-1))
+if a[n//2]==n//2+1:
+	print(-1)
+else:
+	for i in range(n,0,-1):
+		print(i,end="" "")"
+233A,196247667,"a=int(input())
+if a==1:
+     print(-1)
+if a==2:
+     print(2,1)
+if a==3:
+     print(2,1,4)
+if a==4:
+     print(2,1,4,3)"
+233A,58063537,"n=int(input())
+l=[i for i in range(1,n+1)]
+if n<=1:
+	print(""-1"")
+if n>1:
+	l.pop(0)	
+	l.append(1)
+	print(*l)"
+233A,219163636,"#https://codeforces.com/problemset/problem/233/A
+
+def is_even(number):
+    return True if number%2 == 0 else False
+
+def build_answer_string(number):
+    answer_string = """"
+    even_list = [str(x) for x in range(2, number + 1, 2)]
+    odd_list = [str(x) for x in range(1, number, 2)]
+    for x in range(number//2):
+        answer_string += even_list[x] + odd_list[x]
+    return "" "".join(answer_string)
+def get_perfect_permutation(number):
+    if(is_even(number)):
+        return build_answer_string(number)
+    else:
+        return -1
+
+
+n = int(input())
+answer = get_perfect_permutation(n)
+print(answer)"
+233A,60418293,"n = int(input())
+permutation = [0 for _ in range(n)]
+if n == 1:
+    print(-1)
+else:
+    for i in range(1, n+1):
+        permutation[i-1] = i
+    for i in permutation:
+        print(i, end="" "")"
+233A,118507586,"test = int(input())
+ans = []
+
+if test%2 != 0 :
+    print(-1)
+
+else:
+    for i in range(1, int(test/2)+2 ,2  ):
+        a = i
+        b = i+1
+        ans . append(str(b))
+        ans.append(str(a))
+
+    print("" "".join(ans))
+    "
+268A,131670468,"_=input
+x,y=zip(*[_().split()for i in'_'*int(_())])
+print(sum(x.count(i)for i in y))"
+268A,102749520,"n = int(input())
+
+teams = []
+for _ in range(n):
+    teams.append(tuple(map(int,input().split())))
+
+home, away = list(zip(*teams))
+out = 0
+for h in home:
+    out += away.count(h)
+    
+print(out)"
+268A,104735818,"a=int(input())
+x=a
+c=[]
+d=0
+while a!=0:
+
+    b=list(map(int, input().split()))
+
+    c.append(b)
+    a-=1
+
+for i in c: 
+    for g in range(x):
+        if i[0]==c[g][1]:
+            d+=1
+            
+print(d)
+
+ "
+268A,216820075,"a = int(input())
+b = []
+for i in range(a):
+    c = list(map(int , input().split()))
+    b.append(c)
+total = 0
+for i in range(a):
+    for j in range(a):
+        if i == j:
+            continue
+        else:
+            if b[i][0] == b[j][1]:
+                total += 1
+print(total)"
+268A,162314158,"# Happy_water
+def main():
+    n = int(input())
+    h, a = [], []
+    for i in range(n):
+        x, y = map(int, input().split())
+        h.append(x)
+        a.append(y)
+    ans = 0
+    for i in range(n):
+        for j in range(n):
+            if i != j and h[i] == a[j]:
+                ans += 1
+    print(ans)
+
+
+if __name__ == '__main__':
+    main()"
+268A,213203737,"p=[]
+q=[]
+c=0
+for i in range(int(input())):
+    a,b=[int(i) for i in input().split()]
+    p.append(a)
+    q.append(b)
+    if a in q:
+        c+=1
+    if b in p:
+        c+=1
+print(c)"
+268A,182187454,"x = int(input())
+
+l = []
+for _ in range(x):
+    l.append(input().split("" ""))
+
+sum = 0 
+
+for i in range(x):
+    for j in range(len(l[i])):
+        if j != i and (l[i][0] == l[j][1]):
+            sum += 1
+
+print(sum)"
+268A,214393093,"x = int(input(""""))
+list1 = []
+list2 = []
+f = 0
+s = 0
+for i in range(x):
+    y, z = input("""").split()
+    list1.append(int(y))
+    list2.append(int(z))
+for s in range(x):
+    if list1[s] in list2:
+        print(list1)
+        print(list2)
+        f+=list2.count(list1[s])
+print(f)"
+268A,223297131,"host,guest=[],[]
+counter=0
+for i in range(int(input())):
+    h,g=map(int,input().split())
+    host.append(h);guest.append(g)
+for i in range(len(host)):
+    for j in range(len(guest)):
+        if host[i]==guest[j]:
+            counter+=1
+            host[i]=None
+        if guest[i]==host[j]:
+            counter+=1
+            guest[i]=None
+print(counter)"
+268A,101387883,"n=int(input())
+l=[]
+count=0
+for i in range(n):
+    l.append(list(map(int,input().strip().split())))
+for i in l:
+    k=l[l.index(i)+1:]
+    for j in k:
+        if(i[0]==j[1] and i[1]==j[0]):
+            count+=2
+        elif(i[0]==j[1]):
+            count+=1
+        elif(i[1]==j[0]):
+            count+=1
+    
+print(count)
+
+
+ "
+386A,14825864,"n, p = int(input()), sorted((x, i) for i, x in enumerate(map(int, input().split())))
+print(p[-1][1] + 1, p[-2][0])"
+386A,158767022,"input()
+a=[*map(int,input().split())]
+print(a.index(max(a))+1,sorted(a)[-2])"
+386A,141424383,"##########################################################################
+#     Author : nesco   
+#     Created: Sun Jan 02 2022 23:23:17
+#     File   : A. Second-Price Auction
+##########################################################################
+import sys,math,cmath,time,collections
+##########################################################################
+################# ---- THE ACTUAL CODE STARTS BELOW ---- #################
+def solve():
+    n = inp()
+    p = inlt()
+
+    mx = max(p)
+    winner = 1
+    for i in range(n):
+        if mx == p[i]:
+            winner = i + 1
+            break
+    
+    p.sort()
+    price = p[-2]
+
+    print(winner, price, end="" "")
+    print()
+
+################## ---- THE ACTUAL CODE ENDS ABOVE ---- ##################
+##########################################################################
+ 
+def main():
+    global tt
+    t = 1
+    for tt in range(1,t + 1):
+        solve()
+ 
+#---------------------- USER DEFINED INPUT FUNCTIONS --------------------#
+def inp():   # input integer
+    return(int(input()))
+def inlt():  # input list of integers
+    return(list(map(int,input().split())))
+def inls():  # input list of strings
+    return(list(map(str,input().split())))
+def insr():  # input string
+    return(input().strip())
+def invr():  # input array
+    return(map(int,input().split()))
+ 
+#------------------ USER DEFINED PROGRAMMING FUNCTIONS ------------------#
+# are a and b coprime?
+def is_coprime(x, y):
+    return gcd(x, y) == 1
+
+# gcd of two positive integers
+def gcd(p,q):
+    while q != 0:
+        p, q = q, p%q
+    return p
+
+# set to list converter
+def convert(set):
+    return list(set)
+
+# outputs unique values from list
+def unique(list):
+    list_set = set(list)
+    unique_list = convert(list_set)
+    return unique_list
+
+# sorting string
+def sort_string(string):
+    r = sorted(string)
+    return """".join(r)
+
+# reverse string
+def reverse_string(string):
+    return string[::-1]
+
+# Convert string to list character-wise
+def convert_to_list(string):
+    lis=[]
+    lis[:0]=string
+    return lis
+
+# list of all prime numbers up to n
+def seive(n):
+    a = []
+    prime = [True for i in range(n+1)] 
+    p = 2
+    while (p * p <= n): 
+        if (prime[p] == True): 
+            for i in range(p ** 2,n + 1, p): 
+                prime[i] = False
+        p = p + 1
+    for p in range(2,n + 1): 
+        if prime[p]: 
+            a.append(p)
+    return(a)
+
+def counter(a):
+    q = [0] * max(a)
+    for i in range(len(a)):
+        q[a[i] - 1] = q[a[i] - 1] + 1
+    return(q)
+ 
+# counts number of elements 
+def counter_elements(a):
+    q = dict()
+    for i in range(len(a)):
+        if a[i] not in q:
+            q[a[i]] = 0
+        q[a[i]] = q[a[i]] + 1
+    return(q)
+
+# counts number of letters in string
+def string_counter(a):
+    q = [0] * 26
+    for i in range(len(a)):
+        q[ord(a[i]) - 97] = q[ord(a[i]) - 97] + 1
+    return(q)
+ 
+# returns factorial of n
+def factorial(n,m = 1000000007):
+    q = 1
+    for i in range(n):
+        q = (q * (i + 1)) % m
+    return(q)
+
+# returns all (possible) factors of n
+def factors(n):
+    q = []
+    for i in range(1,int(n ** 0.5) + 1):
+        if n % i == 0: q.append(i); q.append(n // i)
+    return(list(sorted(list(set(q)))))
+
+# returns prime factors of n
+def prime_factors(n):
+    q = []
+    while n % 2 == 0: q.append(2); n = n // 2
+    for i in range(3,int(n ** 0.5) + 1,2):
+        while n % i == 0: q.append(i); n = n // i
+    if n > 2: q.append(n)
+    return(list(sorted(q)))
+
+# transpose matrix or vector (list)
+def transpose(a):
+    n,m = len(a),len(a[0])
+    b = [[0] * n for i in range(m)]
+    for i in range(m): 
+        for j in range(n): 
+            b[i][j] = a[j][i]
+    return(b)
+
+# returns boolean if x is power of two
+def power_two(x):
+    return (x and (not(x & (x - 1))))
+
+# returns ceil of division
+def ceil(a, b):
+    return -(-a // b)
+#-----------------------------------------------------------------------#
+    
+main()"
+386A,162489352,"if __name__ == ""__main__"":
+	n = int(input())
+	offers = list(int(x) for x in input().split())
+
+	winner_pos = offers.index(max(offers))
+
+	offers.pop(winner_pos)
+
+	price_to_pay = max(offers)
+
+	print(winner_pos+1, price_to_pay)
+	 		 		 			 		 			 		 	    		"
+386A,144771675,"import math
+import operator
+n = int(input())
+arr = list(map(int, input().split()))
+m = max(arr)
+pm = arr.index(m) + 1
+arr.sort()
+pk = arr[n-2]
+print(pm,pk)
+
+
+        "
+386A,81955318,"n=int(input())
+c=input().split("" "",n)
+mx=max(c)
+i=c.index(mx)
+c.remove(mx)
+mx1=max(c)
+print(i+1,int(mx1))"
+386A,186987706,"n=int(input())
+a=list(map(int,input().split()))
+M=a[0]
+B=0
+L=0
+for i in range(0,n):
+    if a[i]>=M:
+        B=M
+        M=a[i]
+        L=i
+print(L+1,B)"
+386A,100791100,"n=int(input())
+l=list(map(int,input().split()))
+x=l[0]
+i,f=1,0
+for j in range(1,n):
+	if f==0:
+		if x>l[j]:
+			y=l[j]
+			f=1
+	if x<l[j]:
+		y=x
+		x=l[j]
+		i=j+1
+	elif f==1:
+		if y<l[j]:
+			y=l[j]
+print(i,y)"
+386A,262282481,"def second_price_auction():
+    n = int(input(""Enter the number of bidders: ""))
+    bids = list(map(int, input(""Enter the bids separated by spaces: "").split()))
+    
+    highest_bid = max(bids)
+    highest_bid_index = bids.index(highest_bid) + 1
+    
+    bids.remove(highest_bid)
+    second_highest_bid = max(bids)
+    
+    print(highest_bid_index, second_highest_bid)
+
+
+second_price_auction()"
+386A,190652630,"n=int(input())
+a=[int(a)for a in input().split()]
+a=sorted(a)
+print(1+a.index(max(a)),a[-2])"
+401A,117131173,"import  math
+n,x = map(int,input().split())
+li = list( map(int,input().split()))
+c= abs(sum(li))
+print(math.ceil(c/x))"
+401A,74000860,"i=lambda:map(int,input().split());n,x=i();a=abs(sum(i()));print(0--a//x)"
+401A,86089020,"s = [int(i) for i in input().split()]
+d = [int(i) for i in input().split()]
+a = abs(sum(d))
+answer = int(a/s[1])
+if a%s[1] > 0:
+    answer+=1
+print(answer)"
+401A,69431188,"n,a=map(int,input().split())
+num=list(map(int,input().split()))[:n]
+s=0
+s=sum(num)
+if s<=a and s>0:
+    print(1)
+elif s==0:
+    print(0)
+else:
+    s=abs(s)
+    if s%a==0:
+        print((s//a))
+    else:
+        print((s//a)+1)"
+401A,95693850,"import sys
+input = sys.stdin.readline
+ins = lambda: input().rstrip()
+ini = lambda: int(input().rstrip())
+inm = lambda: map(int, input().rstrip().split())
+inl = lambda: list(map(int, input().split()))
+out = lambda x, s='\n': print(s.join(map(str, x)))
+
+n, x = inm()
+a = inl()
+total = sum(a)
+if total == 0:
+    print(0)
+elif abs(total) < x:
+    print(1)
+else:
+    print((abs(total) + x - 1) // x)"
+401A,37380947,"a,b = map(int,input().split())
+c = list(map(int,input().split()))
+print((abs(sum(c)-1)//b)+1)"
+401A,112778295,"n,x=map(int,input().split())
+a=list(map(int,input().split()))
+val=sum(a)//x
+if sum(a)%x>0:
+    val+=1
+print(val)"
+401A,248322190,"[n, x] = map(int, input().split())
+arr = list(map(int, input().split()))
+
+s = 0
+for i in arr:
+    s+=i
+if s - x == 0:
+    print(1)
+else:
+    print(x-1)"
+401A,190269470,"import math 
+n,x=map(int,input().split())
+c=input().split()
+z=0
+p=0
+for i in range(len(c)):
+    z = z + int(c[i])
+if z == 0:
+    print(0)
+else:
+    if abs(z) <= x and abs(z) > 0:
+        print(1)
+    else:
+        print((abs(z)//x+1))"
+401A,56472008,"def cards(arr, absl, n):
+    total = 0
+    for i in arr:
+        total += i
+    total = abs(total)
+    need_card = 0
+
+    if total > absl:
+        while total >= absl:
+            total -= absl
+            need_card += 1
+        if total == 0:
+            return Need_card
+
+    return need_card + 1
+
+def convert(arr):
+    arra = arr.split()
+    array = []
+    for i in arra:
+        array.append(int(i))
+    return array
+
+
+a = input()
+arr = input()
+a = convert(a)
+arr = convert(arr)
+n = a[0]
+absl = a[1]
+
+print(cards(arr, absl, n))"
+448A,89771800,"# import sys
+# sys.stdin=open('input.in','r')
+# sys.stdout=open('output.out','w')
+a1,b1,c1=list(map(int,input().strip().split()[:3]))
+a2,b2,c2=list(map(int,input().strip().split()[:3]))
+n=int(input())
+k1=a1+b1+c1
+k2=a2+b2+c2
+if k1>5:
+	if k1%5==0:
+		s1=int(k1/5)
+	else:
+		s1=int(k1/5)+1
+elif k1==0:
+	s1=0
+else:
+	s1=1
+
+if k2>10:
+	if k2%10==0:
+		s2=int(k2/10)
+	else:
+		s2=int(k2/10)+1
+elif k2==0:
+	s2=0
+else:
+	s2=1
+if s1+s2<=n:
+	print('YES')
+else:
+	print('NO')
+
+ "
+448A,21342587,"a = sum(list(map(int,input().split())))
+b = sum(list(map(int,input().split())))
+n = int(input())
+
+if (a+4)//5 + (b+9)//10 <= n: print('YES')
+else: print('NO')"
+448A,112326675,"i=lambda k:-(-sum(map(int,input().split()))//k)
+print('YNEOS'[i(5)+i(10)>i(1)::2])"
+448A,213359347,"from math import *
+x1, x2, x3 = map(int, input().split())
+y1, y2, y3 = map(int, input().split())
+n = int(input())
+c = x1 + x2 + x3
+m = y1 + y2 + y3
+if int(ceil(c / 5)) + int(ceil(m / 10)) > n:
+    print(""NO"")
+else:
+    print(""YES"")"
+448A,111625189,"a1,a2,a3=[int(x) for x in input().split()]
+b1,b2,b3=[int(x) for x in input().split()]
+n=int(input())
+if (a1+a2+a3)%5!=0:
+    a=(a1+a2+a3)//5+1
+else:
+    a=(a1+a2+a3)//5
+    
+if (b1+b2+b3)%10!=0:
+    b=(b1+b2+b3)//10+1
+else:
+    b=(b1+b2+b3)//10
+if a+b<=n:
+    print(""YES"")
+else:
+    print(""NO"")
+    
+    "
+448A,9620686,"i=input;r=round;a=sum(map(int,i().split()));b=sum(map(int,i().split()));n=int(i());print([""YES"",""NO""][r(a/5)+r(b/10)>n])"
+448A,29829331,"import math
+print('YES' if (math.ceil((sum(list(map(int,input().split())))/5))+math.ceil((sum(list(map(int,input().split())))/10)))<int(input()) else 'NO')"
+448A,84583002,"a,a1,a2=[int(i) for i in input().split()]
+b,b1,b2=[int(x) for x in input().split()]
+c=int(input())
+x=a+a1+a2
+m=b+b1+b2
+l=x//5
+o=m//10
+if x%5!=0:
+    l+=1
+if m%5!=0:
+    o+=1 
+if l+o>c:
+    print('NO')
+else:
+    print('YES')"
+448A,84370772,"def answer():
+    a = sum([int(x) for x in input().split()])
+    b = sum([int(x) for x in input().split()])
+    c = int(input())
+    s_cups = int(a/5)
+    if a%5:s_cups+=1
+    s_shelves = int(a/10)
+    if a%10:s_shelves+=1
+    if c>=s_shelves+s_cups:ans = ""YES""
+    else:ans=""NO""
+
+    return ans
+print(answer())"
+448A,186104766,"a=list(map(int,input().split()))
+b=list(map(int,input().split()))
+n=int(input())
+ans=[]
+br=0
+if sum(a)//n<5:
+    ans.append(""YES"")
+    br+=1
+else:
+    ans.append(""NO"")
+if sum(b)//n<10:
+    ans.append(""YES"")
+    br+=1
+else:
+    ans.append(""NO"")
+if br==2:
+    ans.append(""YES"")
+else:
+    ans.append(""NO"")
+if n==1 and (sum(a)>0 and sum(b)>0):
+    print(""NO"")
+    quit()
+if (sum(a)//5+sum(b)//10)>n:
+    print(""NO"")
+    quit()
+for i in set(ans):
+    print(i)"
+467A,218245929,"print(sum(eval(input().replace(' ','-'))<-1for _ in ' '*int(input())))"
+467A,43994453,"print(sum(eval(input().replace(' ','-'))<-1for _ in ' '*int(input())))"
+467A,94500640,"n = int(input())
+c = 0
+for i in range (n):
+    p,q = input().split()
+    if (int(q)-int(p)) >= 2:
+        c+=1
+print(c)"
+467A,141269710,"n = int(input())
+count = 0
+for i in range(n):
+  x = list(map(int, input().split()))
+  if x[1] - x[0] >= 2:
+    count += 1
+  else:
+    pass
+print(count)"
+467A,44430808,"if __name__ == ""__main__"":
+    n = int(input())
+    cnt = 0
+    for _ in range(n):
+        p, q = (map(int, input().split()))
+        if q - p > 1:
+            cnt += 1
+
+    print(cnt)
+ "
+467A,145163652,"line = input()
+first = line[:1]
+print(first.upper() + line[1:])"
+467A,160716626,"print(sum(eval(input().replaced(' ','-'))<-1for _ in ''*int(input())))"
+467A,46965481,"n=int(input())
+count=0
+while n :
+    (p,k)=map(int,input().split())
+    if p<k:
+        count+=1
+    n-=1
+print(count)"
+467A,134083293,"n=int(input(""""))
+
+room=0
+
+for i in range(n):
+    n, m = [int(n) for n in input("""").split()]
+    if n-m or m-n == 2:
+        room=room+1
+
+print(room)"
+467A,44277185,"n=int(input())
+l=[]
+for i in range(n):
+    l.append(input())
+for i in range(len(l)):
+    l[i]=l[i].split()
+print(l)
+c=0
+for i in l:
+    if int(i[1])-1>int(i[0]):
+        c+=1
+print(c)"
+492A,166443798,"k,n = int(input()),0
+while k>=0: n += 1; k-=n*(n+1)//2
+print(n-1)"
+492A,111410634,"n,t=int(input()),0
+while n>=0:t+=1;n-=t*(t+1)/2
+print(t-1)"
+492A,145067225,"from re import I
+
+
+n = int(input())
+i = 1
+j = 2
+h = 0
+while n - i >= 0:
+    h += 1
+    n -= i 
+    i += j
+    j += 1
+print(h)"
+492A,200715488,"x=int(input())
+i=0
+
+cl = 0
+pls = 0
+
+
+while True:
+    cl += 1
+    if pls + cl <= x:
+        pls += cl
+        x -= pls
+        i += 1
+    else:
+        break
+
+print(i)"
+492A,144887327,"n = int(input())
+
+i = 1
+
+acu = 0
+
+total = 0
+
+f = 1
+
+if n == 1:
+    print('1')
+    f = 0
+
+while(f == 1):
+    
+    acu += i
+    total += acu
+    
+    if total > n:
+        print(i - 1)
+        break
+
+    i += 1
+
+    "
+492A,170005027,"a= int(input())
+if a <=10:
+    print(a)
+else:print(a//6)"
+492A,9230385,"i=0
+a=int(input())
+while i*(i+1)*(i+1)//6<=a:
+ i+=1
+print(i-1)"
+492A,50632194,"n=int(input())
+i=1
+k=1
+kol=0
+while 1<=n<=10**4 and i<=n:
+    if i*2<n:
+        kol+=1
+    k+=1
+    i=i+k
+print(kol)"
+492A,147263807,"n=int(input())
+if n<3:
+    print(1)
+else:
+    s=0
+    c=0
+    for i in range(1,100):
+        if n<s:
+            break
+        s=s+i
+        n=n-s
+        c=c+1
+    print(c)"
+492A,204196328,"so_da = int(input())
+tong_da = 0
+so_hang = 0
+so_da_theo_hang = 0
+while tong_da < so_da:
+    so_hang += 1
+    so_da_theo_hang += so_hang
+    tong_da += so_da_theo_hang
+if(so_hang == 1):
+    print(so_hang)
+else:
+    print(so_hang-1)"
+520A,165698486,"input();print(""YNEOS""[len({*input().upper()})<26::2])"
+520A,267611391,"input();print(""YNEOS""[len({*input().lower()})<26::2])"
+520A,182425118,"n=int(input())
+a=input()
+b=list(a.lower())
+c=set(b)
+l=len(c)
+if l==26:
+	print(""YES"")
+else:
+	print(""NO"")
+
+		 	 	 				  		 	  			   	  	 	"
+520A,149900145,"import sys
+n=int(input())
+s=str(input())
+for i in range(97,123):
+    l=chr(i) in s
+    p=chr(i-32) in s
+    if l==False and p==False:
+        print('NO')
+        sys.exit()
+print('YES')
+
+    "
+520A,234666884,"n=int(input())
+a=input()
+c=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+b=a.lower()
+if n<26:
+    print('NO')
+else:
+    for i in b:
+        if i in c:
+            c.remove(i)
+        else:
+            continue
+    if len(c)>0:
+        print('NO')
+    else:
+        print('YES')
+		 			   		   	 	     	  						"
+520A,49185916,"n=input()
+print(""YES"" if len(set(n))==26 else ""NO"")"
+520A,221241840,"n=int(input())
+a=input()
+a.lower()
+b=set(a)
+if len(b)>=26:
+    print(""YES"")
+else:
+    print(""NO"")"
+520A,131307519,"s=input()
+s=s.lower()
+z='abcdefghijklmnopqrstuvwxyz'
+for i in z:
+    if i not in s:
+        print('NO')
+        break
+print('YES')"
+520A,216659401,"s= int(input())
+k = input()
+count = 0
+if len(k)>25:
+  for i in range(len(k)):
+    if k[i].isalpha():
+      count+=1
+  if count>=26:
+    print(""YES"")
+  else:
+    print(""NO"")
+else:
+  print(""NO"")"
+520A,235699917,"def isPangram(size,txt):
+    if size<26:
+        return ""NO""
+    else:
+        txt.upper()
+        d = {}
+        for i in txt:
+            if i in d:
+                d[i]+=1
+            else:
+                d[i]=1
+        if len(d)!=26:
+            return ""YES""
+        else:
+            return ""NO""
+size = int(input())
+txt = input()
+print(isPangram(size,txt))
+  		    		 			 		   		        	"
+599A,261090890,"a,b,c=map(int,input().split())
+print(min(b,a+c)+min(a+b,c)+min(a,b+c))"
+599A,46888850,"x, y, z = map(int, input().split())
+print(min(2*x+2*y, 2*x+2*z, 2*y+2*z, x+y+z))"
+599A,14365448,"a, b, c = [int(i) for i in input().split()]
+print(min((a + b) * 2, a + b + c, (a + c) * 2, (b + c) * 2))"
+599A,177015175,"arr = [int(_) for _ in input().split()]
+sarr = sorted(arr)
+
+if sum(arr) <= 2*(sarr[0]+sarr[1]):
+    print(sum(arr))
+else:
+    print(2*(sarr[0]+sarr[1]))
+
+
+ "
+599A,43521143,"# -*- coding: utf-8 -*-
+# @Date    : 2018-09-28 09:18:53
+# @Author  : raj lath (oorja.halt@gmail.com)
+# @Link    : link
+# @Version : 1.0.0
+
+from sys import stdin
+
+max_val=int(10e12)
+min_val=int(-10e12)
+
+def read_int()     : return int(stdin.readline())
+def read_ints()    : return [int(x) for x in stdin.readline().split()]
+def read_str()     : return input()
+def read_strs()    : return [x for x in stdin.readline().split()]
+
+distances = read_ints()
+print(min(sum(distances), 2 * (sum(distances) - max(distances))))"
+599A,85572510,"a,b,c=map(int,input().split())
+print(min((a+b+c),(2*a+2*b),(2*c+2*b)))"
+599A,129326927,"d1, d2, d3 = map(int, input().split())
+print(min(d1 + d2 + d3, 2 * (d1 + d2)))"
+599A,105126921,"a,b,c=map(int,input().split())
+if (a*2)+(b*2)<a+b+c:
+    print((a*2)+(b*2))
+else:
+    print(a+b+c)"
+599A,154156234,"a,b,c=[int(x) for x in input().split()]
+if a+b<=c:
+    print(2*(a+b))
+else:
+    if a<b+c:
+        print(a+b+c)
+    else:
+        print(2*(b+c))        "
+599A,78098112,"pshop=[int(x) for x in input().split()]
+minimum=0
+if pshop[0]<=pshop[1]:
+    if pshop[2]>=(pshop[0]+pshop[1]):
+        minimum=(pshop[0]+pshop[1])*2
+    elif pshop[2]<(pshop[0]+pshop[1]):
+        minimum=(pshop[2]+pshop[0])*2
+    else:
+        minimum=(pshop[0]+pshop[1]+pshop[2])
+if pshop[0]>pshop[1]:
+    if pshop[2]>=(pshop[0]+pshop[1]):
+        minimum=(pshop[0]+pshop[1])*2
+    elif pshop[2]<(pshop[0]+pshop[1]):
+        minimum=(pshop[2]+pshop[1])*2
+    else:
+        minimum=(pshop[0]+pshop[1]+pshop[2])
+print(minimum)"
+624A,15813256,"def main():
+    d, l, v1, v2 = map(int, input().split())
+    left = 0
+    right = l
+
+    while right - left > 0.000000001:
+        mi = (left + right) / 2
+        if v1 * mi + v2 * mi >= l - d:
+            right = mi
+        else:
+            left = mi
+
+    print(right)
+
+# fkgdfkhdf df df 
+
+if __name__ == ""__main__"":
+    main()"
+624A,15797499,"import re
+st = input()
+s = re.split(r'[\s]', st)
+d = int(s[0])
+L = int(s[1])
+v1 = int(s[2])
+v2 = int(s[3])
+print ((L - d) / (v1 + v2))"
+624A,54319605,"ent=input()
+d,l,v1,v2=ent.split()
+print((float(l)-float(d))/(float(v1)+float(v2)))"
+624A,144995114,"d,l,v1,v2 = map(int,input().split())
+print(""%.20f""%((l-d)/(v1+v2)))"
+624A,15817506,"a,b,c,d=map(int,input().split());print((b-a)/(c+d))"
+624A,77988853,"a,b,c,d=map(int,input().split())
+print((b-a)/c+d)"
+624A,113002034,"d,l,a,b=map(int,input().split())
+a=(l-d)/(a+b)
+print(str(a)[:4])"
+624A,117302304,"d,L,v1,v2=map(int,input().split())
+print(f'{(L-d)//(v1+v2):.8f}')
+     "
+624A,232308516,"import math
+
+d, L, v1, v2 = map(int, input().split())
+t = (L - d) / (v1 + v2)
+print(L / (v1 + v2) if t * v1 >= L else t + d / (v1 + v2))"
+624A,90502454,"width, right, v1, v2=map(int, input().split())
+left=0;t=0
+
+##Here distance between the blocks are decreased at a speed of v1+v2##
+
+d=right;v=v1+v2
+
+##If the decreased values comes close to the width, the required distance to decrease, decreases by the width of LUKE.##
+
+while d:
+	if d<=v:
+		if d<=width:
+			break
+		else:
+			d-=width
+			d/=v
+			t+=d
+	else:
+		d-=v
+		t+=1
+print(t)"
